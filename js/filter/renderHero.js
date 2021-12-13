@@ -18,7 +18,7 @@ export function renderHero() {
       hero.innerHTML = `
         <div class="hero__banner">
         <a href="products.html">
-        <figure class="hero__image" style="background-image: url(${items.hero.formats.medium.url})" />
+        <figure class="hero__image" style="background-image: url(${items.hero.url})" />
         <div class="hero__header">
         <h1 class="hero__title">Every product has a story</h1>
         <a href="products.html"><button class="cta">Start shopping</button></a>

@@ -13,10 +13,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  height: 60px;
+  background-color: $accent;
   // height: 430px;
   // padding: 1.5rem 2rem;
-  background-color: $accent;
 }
 
 .nav {
@@ -26,12 +26,12 @@
     justify-content: space-between;
     align-items: baseline;
     margin: 0 auto;
+    color: $main;
   }
 
   &__link {
     position: relative;
     padding: 0 0.3em;
-    color: $main;
   }
 
   &__left,
@@ -66,7 +66,6 @@
 
   &--open {
     cursor: pointer;
-    color: #49989e;
     background: transparent;
     font-size: 1.5rem;
   }

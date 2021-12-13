@@ -46,7 +46,14 @@
   text-align: left;
   align-items: left;
 }
-
+.section__color {
+  background-image: url(/images/GRAIN_HOLORAM_WALLPAPER_05.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 1em;
+}
 .favourite,
 .featured,
 .product {
@@ -79,17 +86,10 @@
   }
 
   &__info {
-    font-size: 1rem;
+    font-size: $ff-base;
     padding-inline: 0.1em;
-  }
-
-  &__title {
-    font-size: $fs-h4;
-  }
-
-  &__price {
-    font-size: $fs-base;
-    margin: 0;
+    font-weight: 200;
+    font-family: $ff-accent;
   }
 }
 
@@ -215,5 +215,8 @@
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1000px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

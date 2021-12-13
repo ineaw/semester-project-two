@@ -3,9 +3,13 @@ body {
   color: $text;
 }
 
+h1 {
+  color: $accent;
+}
+
 a {
   font-family: $ff-base;
-  color: $sub;
+  color: black;
 }
 
 .section {

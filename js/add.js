@@ -1,5 +1,5 @@
 import createMenu from "./components/createMenu.js";
-import displayMessage from "./components/displayMessages.js";
+import { displayMessage } from "./components/displayMessages.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import { renderEdit } from "./filter/renderEdit.js";
@@ -52,8 +52,7 @@ function submitForm(event) {
     false
   );
 }
-
-addProduct(titleValue, priceValue, descriptionValue, myWidget);
+addProduct(titleValue, priceValue, descriptionValue);
 
 async function addProduct(title, price, description, image) {
   const url = baseUrl + "products";
