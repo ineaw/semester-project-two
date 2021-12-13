@@ -1,0 +1,21 @@
+body {
+  font-family: $ff-text;
+  color: $text;
+}
+
+a {
+  font-family: $ff-base;
+  color: $sub;
+}
+
+.section {
+  &__header {
+    padding: 2rem;
+  }
+}
+
+.detail {
+  &__title {
+    font-size: 3rem;
+  }
+}

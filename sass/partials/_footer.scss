@@ -1,0 +1,28 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__social,
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 850px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+  }
+}

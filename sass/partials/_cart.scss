@@ -1,0 +1,143 @@
+.products-in-cart {
+  &--btn {
+    font-size: 3rem;
+    padding: 0em 1em;
+    position: absolute;
+  }
+
+  &--header {
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+  }
+}
+
+.products-in-cart {
+  scrollbar-width: none;
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  background: white;
+  width: 400px;
+  height: 100vh;
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: center;
+  animation: fade 500ms;
+}
+
+.products-in-cart::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+
+@keyframes fade {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.hide {
+  display: none;
+  visibility: none;
+}
+.products-in-cart--header {
+  display: flex;
+  text-align: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.products-in-cart ul {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.products-in-cart__buy-item {
+  border-bottom: #aaa 1px solid;
+  width: 90%;
+  padding: 10px 0;
+  display: flex;
+}
+
+.products-in-cart img {
+  width: 110px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.shopping-cart .sum-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-cart .sum-prices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#sum-prices {
+  padding-left: 0.5em;
+}
+
+.sum-prices h6 {
+  font-size: 0.9rem;
+}
+
+#close__button {
+  cursor: pointer;
+}
+
+.overlay {
+  overflow: hidden;
+  display: inline-block;
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.877);
+}
+
+.buy-item__btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.stop-scrolling {
+  height: 100vh;
+  overflow: hidden;
+}
+
+// .buy-item h4 {
+//   margin-bottom: 10px;
+// }
+
+.products-in-cart__buy-item > div {
+  padding: 0 20px;
+}
+
+.products-in-cart .empty {
+  justify-self: center;
+  margin: 150px auto;
+}

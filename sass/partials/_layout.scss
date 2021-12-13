@@ -1,0 +1,166 @@
+/* ======
+  Layout
+  ====== */
+
+/* Containers */
+
+#main__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-inline: 1rem;
+  padding-bottom: 4rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+  padding: 4rem 0;
+}
+
+.section {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4em;
+    align-items: center;
+    width: 100vw;
+  }
+  &__color {
+    background-color: $accent;
+    padding: 2rem;
+  }
+}
+
+/* product cards */
+
+.flex-card {
+  position: relative;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.product {
+  &__figure {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  &__figure > i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    padding: 0.5em;
+    font-size: $fs-base;
+    color: $accent;
+  }
+
+  &__image {
+    max-height: auto;
+    object-fit: cover;
+    height: 320px;
+    width: 240px;
+  }
+
+  &__info {
+    padding: 1em 0 2em 0;
+  }
+
+  &__title {
+    font-size: $fs-h4;
+  }
+
+  &__price {
+    font-size: $fs-base;
+  }
+}
+
+/* Singel product */
+
+.detail-card {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: left;
+  gap: 2rem;
+}
+
+.detail {
+  &__image {
+    object-fit: cover;
+    max-height: auto;
+    width: 90vw;
+    max-width: 30rem;
+    transition: 0.5s all ease-in-out;
+  }
+}
+
+@media (min-width: 700px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .detail-card {
+    flex-direction: row;
+    align-items: top;
+
+    // overflow: hidden;
+  }
+
+  .detail {
+    &__figure {
+      position: relative;
+      z-index: 1;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    &__image {
+      width: 60vw;
+      height: auto;
+      max-width: 40rem;
+    }
+
+    &__info {
+      width: 30vw;
+      color: $sub;
+    }
+
+    &__title,
+    &__price,
+    &__description {
+      margin-bottom: 2rem;
+    }
+  }
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

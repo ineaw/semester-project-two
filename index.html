@@ -1,88 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Home</title>
+    <meta name="description" content="" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.typekit.net/jhy6cad.css" />
     <link rel="icon" href="data:;base64,=" />
   </head>
   <body>
-    <div class="body-container">
-      <header class="nav">
+    <div class="body__container">
+      <header>
+        <nav class="nav">
         <section class="nav__container">
-          <button aria-label="open navigation" class="open-nav">☰</button>
+          <section  class="nav__left">
+          <button aria-label="open navigation" class="nav--open">☰</button>
+              <a href="index.html"><h1 class="nav__logo">Rising</h1></a>
+            </section>
+              <section>
           <div class="nav__content">
-            <button aria-label="close navigation" class="close-nav">×</button>
-            <div class="menu-container"></div>
+            <button aria-label="close navigation" class="nav--close">X</button>
+            <ul class="nav__menu"></ul>
           </div>
         </section>
         <section>
-          <div class="nav__logo"></div>
-        </section>
-        <section>
-          <div class="nav__icons"></div>
+          <ul class="nav__icons"></ul>
+        </nav>
         </section>
       </header>
+      <!--Main-->
       <main id="main">
         <section class="hero">
           <div class="loader"></div>
         </section>
-        <section class="container even">
-          <h2 class="container--header">Featured</h2>
-          <div class="featured-container">
+        <section class="flex-container section__color">
+          <h2 class="featured-title section__header">Our Most Loved</h2>
+          <div class="grid-container featured-products">
             <div class="loader"></div>
           </div>
         </section>
-        <section class="container odd">
-          <h2 class="container--header">All Products</h2>
-          <div class="product-container">
-            <div class="products"></div>
+        <section class="flex-container section--products">
+          <h2 class="products-title section__header">All Products</h2>
+          <div class="grid-container all-products">
+            <div class="loader"></div>
+            <!-- <div class="products"></div> -->
           </div>
         </section>
-        <!-- <section class="container even">
-          <div class="section-container">
-            <div class="deco-image">
-              <img src="#" alt="" />
-            </div>
-            <div class="hero-header">
-              <h2>Header 3</h2>
-              <p class="article-short"></p>
-              <p class="article-short"></p>
-              <button class="light-btn cta">See More</button>
-            </div>
+        <section class="flex-container flex--news">
+          <div class="grid-container news">
+            <div class="loader"></div>
           </div>
-        </section> -->
+        </section>
+        <section class="flex-container section__color">
+          <div class="newsletter">
+              <h2 class="section__header">Newsletter</h2>
+            <p class="newsletter__text">Sign up to explore the Rising Universe, <em>right in your inbox.</em></p>
+            <div class="sign-up">
+              <label for="email">
+                <input type="email" placeholder="Enter your e-mail address" id="signup-email" name="newsletter" aria-label="newsletter sign-up form" />
+              </label>
+              <button class="sign-up__btn" role="button">Subscribe</button>
+            </div>
+            <div class="message-container"></div>
+          </div>
+        </section>
       </main>
       <footer>
         <section class="footer">
-          <div class="footer-main">
-            <ul>
-              <li class="footer-link"><a href="#">About</a></li>
-              <li class="footer-link"><a href="#">Contact</a></li>
-              <li class="footer-link"><a href="#">Shipping</a></li>
-            </ul>
-          </div>
-          <div class="footer-social">
-            <ul>
-              <li class="social-link">
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-              </li>
-              <li class="social-link">
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-              </li>
-              <li class="social-link">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
-          </div>
+          <ul class="flex-container footer__main">
+            <li class="footer__link"><a href="#">About</a></li>
+            <li class="footer__link"><a href="#">Contact</a></li>
+            <li class="footer__link"><a href="#">Shipping</a></li>
+          </ul>
+          <ul class="flex-container footer__social">
+            <li class="footer__link">
+              <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li class="footer__link">
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+            </li>
+            <li class="footer__link">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
         </section>
         <p class="copyright">© Copyright 2021. All rights reserved. Website by Ine AW.</p>
       </footer>
-      <script src="js/script.js" type="module"></script>
+      <script src="js/index.js" type="module"></script>
     </div>
   </body>
 </html>

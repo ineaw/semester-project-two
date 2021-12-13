@@ -1,0 +1,51 @@
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+.hero {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+  }
+
+  &__header {
+    font-size: 5rem;
+    z-index: 1;
+    padding: 2rem;
+    max-width: 90vw;
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 70vh;
+    }
+
+    &__header {
+      font-size: 5rem;
+      z-index: 1;
+      padding: 10rem 5rem;
+      max-width: 70vw;
+      line-height: 1.2;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+}

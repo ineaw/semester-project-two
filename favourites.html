@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Roboto+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="icon" href="data:;base64,=" />
+  </head>
+  <body>
+    <div class="body__container">
+      <header>
+        <nav class="nav">
+        <section class="nav__container">
+          <button aria-label="open navigation" class="nav--open">☰</button>
+          <section>
+            <div class="nav__logo">
+              <a href="index.html"><img src="images/logo.png" class="nav__logo--img" /></a>
+            </div>
+          </section>  
+          <section>
+          <div class="nav__content">
+            <button aria-label="close navigation" class="nav--close">X</button>
+            <ul class="nav__menu"></ul>
+          </div>
+        </section>
+        <section>
+          <ul class="nav__icons"></ul>
+        </nav>
+        </section>
+      </header>
+    <main id="main__container">
+      <h1 class="main--header">Wishlist</h1>
+    <section class="container odd">
+    <button id="clear-favs--btn" type="button">Clear Favourites</button>
+      <div class="fav-container">
+        <div class="loader"></div>
+      </div>
+    </section>
+    </main>
+    <footer>
+      <section class="footer">
+        <div>
+          <ul class="footer__main">
+            <li class="footer--link"><a href="#">About</a></li>
+            <li class="footer--link"><a href="#">Contact</a></li>
+            <li class="footer--link"><a href="#">Shipping</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer__social">
+            <li class="footer__social--link">
+              <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li class="footer__social--link">
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+            </li>
+            <li class="footer__social--link">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <p class="copyright">© Copyright 2021. All rights reserved. Website by Ine AW.</p>
+    </footer>
+    <script src="js/favourites.js" type="module"></script>
+  </div>
+  </body>
+</html>
