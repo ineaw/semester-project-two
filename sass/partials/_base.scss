@@ -8,17 +8,26 @@ body > footer {
   display: flex;
   flex-direction: column;
 
+  &__header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: left;
+    padding-inline-start: 2rem;
+    justify-content: space-around;
+  }
+
   &__image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 60vh;
+    position: relative;
   }
 
-  &__header {
+  &__title {
     font-size: 5rem;
     z-index: 1;
-    padding: 2rem;
     max-width: 90vw;
     line-height: 1.1;
   }
@@ -37,10 +46,9 @@ body > footer {
       height: 70vh;
     }
 
-    &__header {
+    &__title {
       font-size: 5rem;
       z-index: 1;
-      padding: 10rem 5rem;
       max-width: 70vw;
       line-height: 1.2;
     }

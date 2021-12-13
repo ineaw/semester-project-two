@@ -1,6 +1,7 @@
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./components/createMenu.js";
 import { renderProducts } from "./filter/renderProducts.js";
+import { searchProducts } from "./filter/searchProducts.js";
 
 createMenu();
 
@@ -12,6 +13,7 @@ const productsUrl = `${baseUrl}products`;
     const json = await response.json();
     const items = json;
 
+    searchProducts(items);
     renderProducts(items);
   } catch (error) {
     console.log(error);

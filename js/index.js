@@ -4,6 +4,7 @@ import createMenu from "./components/createMenu.js";
 import { renderHero } from "./filter/renderHero.js";
 import { renderProducts } from "./filter/renderProducts.js";
 import { renderFeatured } from "./filter/renderProducts.js";
+
 const productsUrl = baseUrl + "products";
 createMenu();
 

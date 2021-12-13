@@ -13,7 +13,7 @@ createMenu();
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
-const message = document.querySelector(".message__container");
+const message = document.querySelector(".message-container");
 
 form.addEventListener("submit", submitForm);
 

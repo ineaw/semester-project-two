@@ -6,7 +6,7 @@ export function renderCart() {
 
   const parentElement = document.querySelector("#item__buy");
   const cartPriceSum = document.querySelector("#item__sum");
-  const product = document.querySelector(".product-under");
+  const products = document.querySelector(".product-under");
   const cartQuantity = document.querySelector("#item__quantity");
 
   const countPrice = function () {
@@ -66,24 +66,47 @@ export function renderCart() {
     }
   };
 
-  newCartArray = Object.keys(item);
-  console.log(newCartArray);
-  product.forEach((item) => {
+  // newCartArray = Object.keys(item);
+  // console.log(newCartArray);
+  // product.forEach((item) => {
+  //   item.addEventListener("click", (e) => {
+  //     if (e.target.classList.contains("add-to-cart")) {
+  //       const productId = e.target.dataset.id;
+  //       const productTitle = product.querySelector(".detail__title").innerHTML;
+  //       const productPrice = product.querySelector(".detail__price").innerHTML;
+  //       const productImage = product.querySelector("img").src;
+  //       let prod = {
+  //         title: productTitle,
+  //         image: productImage,
+  //         id: productId,
+  //         count: 1,
+  //         price: +productPrice,
+  //         basePrice: +productPrice,
+  //       };
+  //       updateProductsInCart(prod);
+  //       updateShoppingCartHTML();
+  //     }
+  //   });
+  // });
+
+  products.forEach((item) => {
+    console.log(item);
     item.addEventListener("click", (e) => {
-      if (e.target.classList.contains("add-to-cart")) {
-        const productId = e.target.dataset.id;
-        const productTitle = product.querySelector(".detail__title").innerHTML;
-        const productPrice = product.querySelector(".detail__price").innerHTML;
-        const productImage = product.querySelector("img").src;
-        let prod = {
-          title: productTitle,
+      if (e.target.classList.contains("addToCart")) {
+        const productID = e.target.dataset.productId;
+        const productName = item.querySelector(".detail__title").innerHTML;
+        const productPrice = item.querySelector(".price").innerHTML;
+        const productImage = item.querySelector("img").src;
+
+        let product = {
+          title: productName,
           image: productImage,
-          id: productId,
+          id: productID,
           count: 1,
           price: +productPrice,
           basePrice: +productPrice,
         };
-        updateProductsInCart(prod);
+        updateProductsInCart(product);
         updateShoppingCartHTML();
       }
     });

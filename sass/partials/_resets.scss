@@ -7,7 +7,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   list-style: none;
-  // outline: none;
+  outline: none;
   text-decoration: none;
 }
 
@@ -29,7 +29,7 @@ html,
 body {
   min-height: 100vh;
   // margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.3;
   overflow-x: hidden;
 }
 
@@ -39,26 +39,20 @@ img {
 }
 
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
 figure,
 picture {
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  font-weight: 400;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p {
+//   font-weight: 400;
+// }
 
 input,
 button,
@@ -82,12 +76,10 @@ select {
 
 .flex {
   display: flex;
-  gap: var(--gap, 1rem);
 }
 
 .grid {
   display: grid;
-  gap: var(--gap, 1rem);
 }
 
 .container {

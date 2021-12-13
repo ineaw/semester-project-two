@@ -41,8 +41,8 @@ export default function createMenu() {
       <div class="products-in-cart hide">
       <div class="overlay"></div>
       <div class="products-in-cart--header">
-      <button id="close-button" class="products-in-cart--btn">
-      x
+      <button id="close__button" class="products-in-cart--btn">
+     X
       </button>
       <h2>Cart</h2>
       </div>

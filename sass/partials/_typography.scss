@@ -10,12 +10,13 @@ a {
 
 .section {
   &__header {
-    padding: 2rem;
+    font-weight: 400;
   }
 }
 
 .detail {
   &__title {
-    font-size: 3rem;
+    font-size: $fs-h3;
+    line-height: 1.1;
   }
 }

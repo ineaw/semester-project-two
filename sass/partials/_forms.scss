@@ -7,17 +7,15 @@ form {
   max-width: 600px;
   margin: 0 auto;
   padding: 4rem;
-  border-radius: 0.5rem;
-  background: var(--clr-marble-white);
+  background: $accent;
   width: 350px;
-  color: var(--clr-main-dark);
+  color: $sub;
 }
 
 input,
 textarea {
   padding: 0.5em;
-  border: 2px solid var(--clr-accent);
-  border-radius: 0.5rem;
+  border: 2px solid $sub;
 }
 
 textarea {

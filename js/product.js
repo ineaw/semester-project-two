@@ -30,15 +30,15 @@ const shopping = getExistingItems();
     const item = json;
     console.log(json);
 
-    detailContainer.innerHTML += `
-        <div class="detail detail-card">
+    detailContainer.innerHTML += `       
         <div class="product-under"> 
+        <div class="detail detail-card">
         <figure class="detail__figure">
         <img class="detail__image" src="${item.image.url}" alt="${item.title}">
         </figure>
         <div class="detail__info">
         <h2 class="detail__title">${item.title}</h2>
-        <h3 class="price"><span class="detail__price">${item.price}</span>kr</h3>
+        <h3 class="detail__price"><span class="price">${item.price}</span>kr</h3>
         <button class="btn btn-small addToCart" data-product-id="${item.id}"><i class="fas fa-cart-plus"></i>Add to cart</button>
         <p class="detail__description">${item.description}</p>
         </div>
@@ -93,7 +93,7 @@ const shopping = getExistingItems();
 
         parentElement.innerHTML = result.join("");
         document.querySelector(".checkout").classList.remove("hidden");
-        cartSumPrice.innerHTML = "$" + countTheSumPrice();
+        cartSumPrice.innerHTML = "NOK" + countTheSumPrice();
         cartNumbers.innerHTML = countTheItems();
       } else {
         document.querySelector(".checkout").classList.add("hidden");
@@ -130,7 +130,7 @@ const shopping = getExistingItems();
         if (e.target.classList.contains("addToCart")) {
           const productID = e.target.dataset.productId;
           const productName = item.querySelector(".detail__title").innerHTML;
-          const productPrice = item.querySelector(".detail__price").innerHTML;
+          const productPrice = item.querySelector(".price").innerHTML;
           const productImage = item.querySelector("img").src;
 
           let product = {
@@ -168,7 +168,6 @@ const shopping = getExistingItems();
         updateShoppingCartHTML();
       }
     });
-    console.log(id);
     updateShoppingCartHTML();
   } catch (error) {
     console.log(error);

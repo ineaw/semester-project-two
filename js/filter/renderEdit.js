@@ -14,13 +14,13 @@ export function renderEdit() {
 
       for (let i = 0; i < products.length; i++) {
         productContainer.innerHTML += `
-        <div id="product" class="product flex-card">
+        <div id="edit" class="edit flex-card">
         <a href="edit.html?id=${products[i].id}">
-        <figure class="product__figure">
-        <img class="product__image" src="${products[i].image.url}"/>
+        <figure class="edit__figure">
+        <img class="edit__thumb" src="${products[i].image.formats.thumbnail.url}"/>
         </figure>
-        <div class="product__info">
-        <h4 class="product__title">${products[i].title}</h4>
+        <div class="edit__info">
+        <h4 class="edit__title">${products[i].title}</h4>
         </div>
         <button class="cta">Edit product</button>
         </a>

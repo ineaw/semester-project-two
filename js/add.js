@@ -3,6 +3,7 @@ import displayMessage from "./components/displayMessages.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import { renderEdit } from "./filter/renderEdit.js";
+
 createMenu();
 renderEdit();
 
@@ -20,42 +21,43 @@ function submitForm(event) {
   message.innerHTML = "";
 
   const titleValue = title.value.trim();
-  const priceValue = price.value.trim();
+  const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
 
   if (titleValue.length === 0 || priceValue.length === 0 || descriptionValue.length === 0) {
     return displayMessage("warning", "please supply proper values", ".message-container");
   }
 
-  addProduct(titleValue, priceValue, descriptionValue);
+  const cloudName = "iwa"; // replace with your own cloud name
+  const uploadPreset = "bspotaqh"; // replace with your own upload preset
+
+  const myWidget = cloudinary.createUploadWidget(
+    {
+      cloudName: cloudName,
+      uploadPreset: uploadPreset,
+    },
+    (error, result) => {
+      if (!error && result && result.event === "success") {
+        console.log("Done! Here is the image info: ", result.info);
+        document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
+      }
+    }
+  );
+
+  document.getElementById("upload_widget").addEventListener(
+    "click",
+    function () {
+      myWidget.open();
+    },
+    false
+  );
 }
 
-const cloudName = "iwa"; // replace with your own cloud name
-const uploadPreset = "bspotaqh"; // replace with your own upload preset
-const myWidget = cloudinary.createUploadWidget(
-  {
-    cloudName: cloudName,
-    uploadPreset: uploadPreset,
-  },
-  (error, result) => {
-    if (!error && result && result.event === "success") {
-      console.log("Done! Here is the image info: ", result.info);
-      document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
-    }
-  }
-);
+addProduct(titleValue, priceValue, descriptionValue, myWidget);
 
-document.getElementById("upload_widget").addEventListener(
-  "click",
-  function () {
-    myWidget.open();
-  },
-  false
-);
-
-async function addProduct(title, price, description, image, featured) {
+async function addProduct(title, price, description, image) {
   const url = baseUrl + "products";
-  const data = JSON.stringify({ title: title, price: price, description: description, image: image, featured: featured });
+  const data = JSON.stringify({ title: title, price: price, description: description, image: image });
 
   const token = getToken();
 
