@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Favorites</title>
+    <title>Edit book</title>
     <link href="css/style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,13 +17,11 @@
       <header>
         <nav class="nav">
         <section class="nav__container">
+          <section  class="nav__left">
           <button aria-label="open navigation" class="nav--open">☰</button>
-          <section>
-            <div class="nav__logo">
-              <a href="index.html"><img src="images/logo.png" class="nav__logo--img" /></a>
-            </div>
-          </section>  
-          <section>
+              <a href="index.html"><h1 class="nav__logo">Rising</h1></a>
+            </section>
+              <section>
           <div class="nav__content">
             <button aria-label="close navigation" class="nav--close">X</button>
             <ul class="nav__menu"></ul>
@@ -33,40 +32,60 @@
         </nav>
         </section>
       </header>
-    <main id="main__container">
-      <h1 class="main--header">Wishlist</h1>
-    <section class="container odd">
-    <button id="clear-favs--btn" type="button">Clear Favourites</button>
-      <div class="fav-container">
+      <main id="main__container">
+        <h1 class="main--header">Edit products</h1>
+      <form class="edit-form">
+        <div class="message-container"></div>
         <div class="loader"></div>
+        <div>
+          <label for="title">Title</label>
+          <input id="title" />
+        </div>
+        <div>
+          <label for="price">Price</label>
+          <input id="price" />
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <textarea id="description"></textarea>
+        </div>
+        <div>
+          <label for="file">image</label>
+          <input id="file" type="file" />
+        </div>
+        <input id="id" type="hidden" />
+        <div>
+          <button id="update">Update</button>
+        </div>
+        <div class="delete-container"></div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <section class="footer">
+      <div>
+        <ul class="footer__main">
+          <li class="footer--link"><a href="#">About</a></li>
+          <li class="footer--link"><a href="#">Contact</a></li>
+          <li class="footer--link"><a href="#">Shipping</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="footer__social">
+          <li class="footer__social--link">
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+          </li>
+          <li class="footer__social--link">
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </li>
+          <li class="footer__social--link">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
       </div>
     </section>
-    </main>
-    <footer>
-      <section class="footer">
-        <div>
-          <ul class="footer__main">
-            <li class="footer--link"><a href="#">About</a></li>
-            <li class="footer--link"><a href="#">Contact</a></li>
-            <li class="footer--link"><a href="#">Shipping</a></li>
-          </ul>
-        </div>
-        <div>
-          <ul class="footer__social">
-            <li class="footer__social--link">
-              <a href="#"><i class="fab fa-facebook-square"></i></a>
-            </li>
-            <li class="footer__social--link">
-              <a href="#"><i class="fab fa-pinterest"></i></a>
-            </li>
-            <li class="footer__social--link">
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <p class="copyright">© Copyright 2021. All rights reserved. Website by Ine AW.</p>
-    </footer>
-    <script src="js/favourites.js" type="module"></script>
+    <p class="copyright">© Copyright 2021. All rights reserved. Website by Ine AW.</p>
+  </footer>
+<script src="js/edit.js" type="module"></script>
   </body>
 </html>

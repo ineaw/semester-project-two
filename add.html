@@ -17,13 +17,11 @@
       <header>
         <nav class="nav">
         <section class="nav__container">
+          <section  class="nav__left">
           <button aria-label="open navigation" class="nav--open">☰</button>
-          <section>
-            <div class="nav__logo">
-              <a href="index.html"><img src="images/logo.png" class="nav__logo--img" /></a>
-            </div>
-          </section>  
-          <section>
+              <a href="index.html"><h1 class="nav__logo">Rising</h1></a>
+            </section>
+              <section>
           <div class="nav__content">
             <button aria-label="close navigation" class="nav--close">X</button>
             <ul class="nav__menu"></ul>
@@ -55,9 +53,9 @@
             <label for="featured" class="form-item__label">Featured item</label>
             <input id="featured" type="checkbox" />
           </div>
+          <label for="image" class="form-item__label">Upload image</label>
         <button id="upload_widget" class="cloudinary-button">Upload files</button>
         <img alt="" id="uploadedimage" />
-        <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
         (edited)
       </div>
       <button>Add</button>
@@ -96,6 +94,7 @@
         </section>
         <p class="copyright">© Copyright 2021. All rights reserved. Website by Ine AW.</p>
       </footer>
+      <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="js/add.js" type="module"></script>
   </body>
 </html>

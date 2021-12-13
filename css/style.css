@@ -501,6 +501,43 @@ body > footer {
   }
 }
 
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem;
+  border-radius: 0.5rem;
+  background: var(--clr-marble-white);
+  width: 350px;
+  color: var(--clr-main-dark);
+}
+
+input,
+textarea {
+  padding: 0.5em;
+  border: 2px solid var(--clr-accent);
+  border-radius: 0.5rem;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  color: var(--clr-main-dark);
+}
+
+form > div {
+  margin-bottom: 1rem;
+}
+
 body {
   font-family: "degular", sans-serif;
   color: #000000;
