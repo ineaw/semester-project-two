@@ -15,7 +15,7 @@
   text-align: center;
   display: grid;
   place-items: center;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-top: 2rem;
   align-items: top;
@@ -133,8 +133,8 @@
   &__image {
     max-height: auto;
     object-fit: cover;
-    height: 27rem;
-    width: 27rem;
+    height: 13rem;
+    width: 10rem;
   }
 
   &__figure:hover {

@@ -1,4 +1,4 @@
-export default function getExistingFavs(items) {
+export default function getExistingFavs() {
   const favs = localStorage.getItem("favourites");
   console.log(favs);
   if (favs === null) {

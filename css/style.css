@@ -180,8 +180,8 @@ body > footer {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-top: 2rem;
   -webkit-box-align: top;
@@ -327,8 +327,8 @@ body > footer {
   max-height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 27rem;
-  width: 27rem;
+  height: 13rem;
+  width: 10rem;
 }
 
 .favourite__figure:hover,
