@@ -18,6 +18,7 @@
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
+  align-items: top;
   // padding-inline: 1rem;
 }
 
@@ -30,17 +31,60 @@
   padding-inline: 2rem;
 }
 
-.featured__div {
+.carousel__wrap {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // padding: 0 4rem;
   display: flex;
-  flex-direction: row;
-  align-items: top;
-  padding: 0 4rem;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  max-width: 80vw;
+  padding-left: 0px;
 }
 
-.featured-title {
+.featured-products {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  align-items: center;
+  width: 100%;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 50%;
+  padding: 1em 0em;
+}
+
+.featured {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  margin-right: 1.5em;
+  margin-left: 1em;
+  padding-bottom: 1em;
+  overflow: hidden;
+  scroll-snap-align: center;
 }
+
+.featured img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+// .featured-title {
+//   display: flex;
+//   flex-direction: column;
+//   background-color: $main;
+//   padding: 2rem;
+//   height: 15rem;
+// }
 
 // .section {
 //   display: flex;
@@ -67,7 +111,7 @@
   padding: 1em;
 }
 .favourite,
-.featured,
+// .featured,
 .product {
   &__figure {
     position: relative;
@@ -149,10 +193,10 @@
   }
 }
 
-#featured-slider {
-  height: 60vh;
-  position: relative;
-}
+// #featured-slider {
+//   height: 60vh;
+//   position: relative;
+// }
 
 // #featured__container {
 // }
@@ -166,13 +210,20 @@
 // #feature-slider__nav--right {
 // }
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr 1fr;
   }
 
+  // .featured__div {
+  //   display: flex;
+  //   flex-direction: row;
+  //   align-items: top;
+  //   padding: 0 4rem;
+  // }
+
   .favourite,
-  .featured,
+  // .featured,
   .product {
     &__image {
       max-height: auto;

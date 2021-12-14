@@ -7,6 +7,9 @@ import clearCartButton from "./components/articles/clearCartButton.js";
 createMenu();
 clearCartButton();
 
+const breadcrumbs = document.querySelector(".breadcrumbs");
+const changeTitle = document.querySelector("title");
+
 const querystring = document.location.search;
 
 const params = new URLSearchParams(querystring);
@@ -29,7 +32,7 @@ const shopping = getExistingItems();
 
     const item = json;
     console.log(json);
-
+    changeTitle.innerHTML = `${item.title} | Moon Rising`;
     detailContainer.innerHTML += `       
         <div class="product-under"> 
         <div class="detail detail-card">
@@ -45,6 +48,13 @@ const shopping = getExistingItems();
         </div>
         </div>
       `;
+
+    breadcrumbs.innerHTML += `   
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><p>${item.title}</p></li>
+      `;
+
     let productsInCart = JSON.parse(localStorage.getItem("shoppingcart"));
 
     if (!productsInCart) {

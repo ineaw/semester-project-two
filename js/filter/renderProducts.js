@@ -1,21 +1,19 @@
 import getExistingFavs from "../components/favFunctions.js";
+import sortProducts from "./sortProducts.js";
+import { toggleFavourites } from "../components/favs.js";
+import { renderToggle } from "./renderToggle.js";
 
 export function renderProducts(products) {
   const productContainer = document.querySelector(".all-products");
   productContainer.innerHTML = "";
 
+  sortProducts(products, productContainer);
+
   const favourites = getExistingFavs();
 
   products.forEach((item) => {
-    let favIcon = "far";
+    let favIcon = toggle(item);
 
-    const doesFavExist = favourites.find(function (fav) {
-      return parseInt(fav.id) === item.id;
-    });
-
-    if (doesFavExist) {
-      favIcon = "fa";
-    }
     productContainer.innerHTML += `
         <div id="product" class="product flex-card">
         <figure class="product__figure">
@@ -32,55 +30,27 @@ export function renderProducts(products) {
         `;
   });
 
-  const favButtons = document.querySelectorAll("#product i");
+  toggleFavourites();
 
-  favButtons.forEach((iconButton) => {
-    iconButton.addEventListener("click", handleClick);
-  });
-  function handleClick() {
-    this.classList.toggle("fa");
-    this.classList.toggle("far");
-
-    const id = this.dataset.id;
-    const title = this.dataset.title;
-    const description = this.dataset.description;
-    const price = this.dataset.price;
-    const image = this.dataset.image;
-
-    const currentFavs = getExistingFavs();
-
-    const itemExists = currentFavs.find(function (fav) {
-      return fav.id === id;
-    });
-    if (itemExists === undefined) {
-      const product = { id: id, title: title, description: description, price: price, image: image };
-
-      currentFavs.push(product);
-
-      saveFavs(currentFavs);
-    } else {
-      const newFavs = currentFavs.filter((fav) => fav.id !== id);
-      saveFavs(newFavs);
-    }
-  }
-  function saveFavs(favs) {
-    localStorage.setItem("favourites", JSON.stringify(favs));
+  function toggle(item) {
+    return renderToggle(favourites, item);
   }
 }
 
 export function renderFeatured(items) {
   const featuredContainer = document.querySelector(".featured-products");
   featuredContainer.innerHTML = "";
+  const favourites = getExistingFavs();
 
-  let favIcon = "far";
+  let favIcon = renderToggle(favourites, items);
 
   // Using a Ternary operator to see if the products are featured
 
   for (let i = 0; i < items.length; i++) {
     const feat = items[i].featured ? "block" : "none";
     featuredContainer.innerHTML += `
-        <div class="product flex-card" style="display: ${feat}">
-        <figure class="product__figure">
+        <div class="featured" style="display: ${feat}">
+        <figure class="featured">
         <i class="${favIcon} fa-heart" data-id="${items[i].id}" data-title="${items[i].title}" data-price="${items[i].price}" data-description="${items[i].description}" data-image="${items[i].image.url}"></i>
         <a href="product.html?id=${items[i].id}">
         <img class="product__image" src="${items[i].image.url}"  alt="${items[i].title}"/>
@@ -93,4 +63,5 @@ export function renderFeatured(items) {
         </div>
         `;
   }
+  toggleFavourites();
 }

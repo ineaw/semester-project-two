@@ -30,17 +30,25 @@
         </section>
         <section>
           <ul class="nav__icons"></ul>
-  
         </nav>
         </section>
-      </header>
-            <main id="main__container">
+          </header>
+            <main id="main">
+              <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+              </ul>
         <h1 class="main--header">Our Products</h1>
-        <li class="nav__link"><div class="search-container">
+        <div class="search-container">
           <input class="search" placeholder="🔎 Search by title" />
-        </div></li>
+        </div>
         <section class="flex-container section--products">
           <h2 class="products-header">All day I dream about crystals</h2>
+          <div class="sort">
+            <h5>Sort by:</h5>
+          <button class="sort-low">Lowest price</button>
+          <button class="sort-high">Highest price</button>
+        </div>
           <div class="grid-container all-products">
             <div class="loader"></div>
           </div>
