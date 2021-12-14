@@ -48,7 +48,6 @@ export function renderFeatured(item) {
 
   for (let i = 0; i < item.length; i++) {
     let favIcon = toggle(item[i]);
-
     const feat = item[i].featured ? "block" : "none";
 
     featuredContainer.innerHTML += `
@@ -70,5 +69,25 @@ export function renderFeatured(item) {
 
   function toggle(item) {
     return renderToggle(favourites, item);
+  }
+}
+
+export function renderGallery(news) {
+  const galleryContainer = document.querySelector(".news__container");
+  galleryContainer.innerHTML = "";
+
+  for (let i = 0; i < news.length; i++) {
+    if (i === 6) {
+      break;
+    }
+
+    galleryContainer.innerHTML += `
+        <figure class="news">
+        <a href="product.html?id=${news[i].id}">
+        <img class="product__image" src="${news[i].image.url}"  alt="${news[i].title}"/>
+        </a>
+        </figure>
+        </div>
+        `;
   }
 }

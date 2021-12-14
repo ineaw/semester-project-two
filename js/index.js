@@ -4,6 +4,7 @@ import createMenu from "./components/createMenu.js";
 import { renderHero } from "./filter/renderHero.js";
 import { renderProducts } from "./filter/renderProducts.js";
 import { renderFeatured } from "./filter/renderProducts.js";
+import { renderGallery } from "./filter/renderProducts.js";
 
 const productsUrl = baseUrl + "products";
 createMenu();
@@ -17,7 +18,8 @@ createMenu();
 
     renderHero(items);
     renderFeatured(items);
-    renderProducts(items);
+    // renderProducts(items);
+    renderGallery(items);
   } catch (error) {
     console.log(error);
     // displayMessage("error", error, ".product__container");

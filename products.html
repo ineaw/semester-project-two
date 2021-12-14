@@ -12,7 +12,6 @@
     <link rel="icon" href="data:;base64,=" />
   </head>
   <body>
-    <div class="body__container">
       <header>
         <nav class="nav">
         <section class="nav__container">
@@ -39,16 +38,20 @@
                 <li><a href="products.html">Products</a></li>
               </ul>
         <h1 class="main--header">Our Products</h1>
-        <div class="search-container">
-          <input class="search" placeholder="🔎 Search by title" />
-        </div>
         <section class="flex-container section--products">
           <h2 class="products-header">All day I dream about crystals</h2>
+          <section class="filters">
+          <div class="search">
+            <input class="search__input" placeholder="🔎 Search by title" />
+          </div>
           <div class="sort">
-            <h5>Sort by:</h5>
+            <!-- <h5>Sort by:</h5> -->
+            <!-- <div class="sort__buttons"> -->
           <button class="sort-low">Lowest price</button>
           <button class="sort-high">Highest price</button>
+        <!-- </div> -->
         </div>
+      </section>
           <div class="grid-container all-products">
             <div class="loader"></div>
           </div>

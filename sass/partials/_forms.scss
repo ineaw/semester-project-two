@@ -9,7 +9,7 @@ form {
   padding: 4rem;
   background: $accent;
   width: 350px;
-  color: $sub;
+  color: black;
 }
 
 input,
@@ -31,6 +31,14 @@ form textarea {
 
 form > div {
   margin-bottom: 1rem;
+}
+
+.search {
+  &__input {
+    padding: 0.2rem;
+    width: 150px;
+    border: 2px solid black;
+  }
 }
 
 @media (min-width: 850px) {
