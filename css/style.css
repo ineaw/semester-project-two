@@ -436,10 +436,9 @@ body > footer {
 }
 
 .logo {
-  top: 30px;
-  left: 100px;
-  width: 150px;
-  height: 75px;
+  margin-left: 2rem;
+  top: 4rem;
+  width: 100px;
 }
 
 .nav {
