@@ -12,39 +12,33 @@
     <link rel="icon" href="data:;base64,=" />
   </head>
   <body>
-      <header>
-        <nav class="nav">
-        <section class="nav__container">
-          <button aria-label="open navigation" class="nav--open">☰</button>
-          <section>
-            <div class="nav__logo">
-            </div>
-          </section>  
-          <section>
-          <div class="nav__content">
-            <button aria-label="close navigation" class="nav--close">X</button>
-            <ul class="nav__menu"></ul>
-          </div>
-        </section>
-        <section>
-          <ul class="nav__icons"></ul>
-        </nav>
-        </section>
-      </header>
-      <main id="main">
-        <ul class="breadcrumbs">
-        </ul>
+    <nav class="nav">
+      <div class="nav__left">
+      <button aria-label="open navigation" class="nav--open"><i class="fas fa-bars"></i></button>
+      <a href="index.html"><img class="logo"/></a>
+      <div class="nav__content">
+        <button aria-label="close navigation" class="nav--close">X</button>
+        <ul class="nav__menu"></ul>
+      </div>
+    </div>
+    <div class="nav__icons"></div>
+  </section>
+    </nav>
+  </header>
+  <ul class="breadcrumbs">
+      </ul>
+      <main>
         <div class="message-container"></div>
-        <section class="flex-container">
+        <section class="flex">
           <div class="product-wrapper">
           <div class="details">
             <div class="loader"></div>
         </div>
           </div>
     </section>
-    <section class="flex-container section--products">
+    <section class="flex section--products">
       <h2>...maybe you also like</h2>
-      <div class="grid-container all-products">
+      <div class="grid all-products">
         <div class="loader"></div>
       </div>
     </section>

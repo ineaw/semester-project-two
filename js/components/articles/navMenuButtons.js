@@ -28,7 +28,7 @@ export function navMenuButtons() {
     document.querySelector("body").classList.toggle("stop-scrolling");
   });
 
-  const closeShopCart = document.querySelector("#close__button");
+  const closeShopCart = document.querySelector("#close-button");
   const overlay = document.querySelector(".overlay");
   closeShopCart.addEventListener("click", closeCart);
   overlay.addEventListener("click", closeCart);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit book</title>
+    <title>Edit product</title>
     <link href="css/style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,25 +13,20 @@
     <link rel="icon" href="data:;base64,=" />
   </head>
   <body>
-      <header>
-        <nav class="nav">
-        <section class="nav__container">
-          <section  class="nav__left">
-          <button aria-label="open navigation" class="nav--open">☰</button>
-              <a href="index.html"><h1 class="nav__logo">Rising</h1></a>
-            </section>
-              <section>
-          <div class="nav__content">
-            <button aria-label="close navigation" class="nav--close">X</button>
-            <ul class="nav__menu"></ul>
-          </div>
-        </section>
-        <section>
-          <ul class="nav__icons"></ul>
-        </nav>
-        </section>
-      </header>
-      <main id="main__container">
+    <nav class="nav">
+      <div class="nav__left">
+      <button aria-label="open navigation" class="nav--open"><i class="fas fa-bars"></i></button>
+      <a href="index.html"><img class="logo"/></a>
+      <div class="nav__content">
+        <button aria-label="close navigation" class="nav--close">X</button>
+        <ul class="nav__menu"></ul>
+      </div>
+    </div>
+    <div class="nav__icons"></div>
+  </section>
+    </nav>
+</header>
+    <main id="main__container">
         <h1 class="main--header">Edit products</h1>
       <form class="edit-form">
         <div class="message-container"></div>

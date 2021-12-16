@@ -34,8 +34,8 @@ const shopping = getExistingItems();
     console.log(json);
     changeTitle.innerHTML = `${item.title} | Moon Rising`;
     detailContainer.innerHTML += `       
-        <div class="product-under"> 
         <div class="detail detail-card">
+        <div class="product-under"> 
         <figure class="detail__figure">
         <img class="detail__image" src="${item.image.url}" alt="${item.title}">
         </figure>
@@ -60,7 +60,7 @@ const shopping = getExistingItems();
     if (!productsInCart) {
       productsInCart = [];
     }
-    const parentElement = document.querySelector("#buyItems");
+    const parentElement = document.querySelector("#buy-items");
     const cartSumPrice = document.querySelector("#sum-prices");
     const products = document.querySelectorAll(".product-under");
     const cartNumbers = document.querySelector("#sum-items");

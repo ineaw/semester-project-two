@@ -1,30 +1,26 @@
 .logo {
-  position: absolute;
   top: 30px;
   left: 100px;
   width: 150px;
   height: 75px;
 }
 
-.nav__container {
-  padding: 1em;
+.nav {
+  padding: 2em;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 100px;
   background-color: $accent;
   // height: 430px;
   // padding: 1.5rem 2rem;
-}
-
-.nav {
   &__links {
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     margin: 0 auto;
     color: $main;
   }
@@ -39,12 +35,18 @@
     margin-right: 10px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+  }
+
+  &__icons i {
+    margin-top: 2.7rem;
+    // margin-right: 0.5rem;
+    font-size: 1.2rem;
   }
 
   &__content {
     background-color: $accent;
+    font-size: $fs-h3;
     width: 100%;
     position: fixed;
     z-index: 4;
@@ -71,10 +73,28 @@
   }
 
   &--close {
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 0 1em;
     position: absolute;
   }
+}
+
+.nav__link::before {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  height: 3px;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transition: all 0.4s ease-in-out;
+  background: $main;
+}
+
+.nav__link:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 .nav--open,
@@ -82,7 +102,6 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: $fs-h3;
   color: $sub;
 }
 
@@ -111,6 +130,12 @@
     &__menu {
       flex-direction: row;
       margin-top: 0;
+    }
+
+    &__icons i {
+      margin-top: 1.5rem;
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
     }
   }
 

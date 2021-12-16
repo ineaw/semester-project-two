@@ -1,10 +1,11 @@
-import getExistingFavs from "./components/favFunctions.js";
+import { getExistingFavs } from "./components/favFunctions.js";
 import clearFavButton from "./components/articles/clearFavButton.js";
 import createMenu from "./components/createMenu.js";
+import { toggleOut } from "./components/articles/toggleOut.js";
+import { toggleOutFavs } from "./components/toggleFavourites.js";
 
 createMenu();
-
-const favourites = getExistingFavs();
+export const favourites = getExistingFavs();
 clearFavButton();
 
 const favContainer = document.querySelector(".fav-container");
@@ -20,13 +21,7 @@ if (favourites.length === 0) {
 favourites.forEach((favourite) => {
   let favIcon = "fa";
 
-  const doesFavExist = favourites.find(function (fav) {
-    return parseInt(fav.id) === favourite.id;
-  });
-
-  if (doesFavExist) {
-    favIcon = "far";
-  }
+  favIcon = toggleOut(favourite, favIcon);
 
   favContainer.innerHTML += `
   <div class="favourite flex-card">
@@ -46,36 +41,5 @@ favourites.forEach((favourite) => {
 const favButtons = document.querySelectorAll(".favourite i");
 
 favButtons.forEach((iconButton) => {
-  iconButton.addEventListener("click", handleClick);
+  iconButton.addEventListener("click", toggleOutFavs);
 });
-
-function handleClick() {
-  this.classList.toggle("far");
-  this.classList.toggle("fa");
-
-  const id = this.dataset.id;
-  const title = this.dataset.title;
-  const description = this.dataset.description;
-  const price = this.dataset.price;
-  const image = this.dataset.image;
-
-  const currentFavs = getExistingFavs();
-
-  const itemExists = currentFavs.find(function (fav) {
-    return fav.id === id;
-  });
-
-  if (itemExists === undefined) {
-    const product = { id: id, title: title, description: description, price: price, image: image };
-
-    currentFavs.push(product);
-
-    saveFavs(currentFavs);
-  } else {
-    const newFavs = currentFavs.filter((fav) => fav.id !== id);
-    saveFavs(newFavs);
-  }
-}
-function saveFavs(favs) {
-  localStorage.setItem("favourites", JSON.stringify(favs));
-}

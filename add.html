@@ -13,29 +13,31 @@
     <link rel="icon" href="data:;base64,=" />
   </head>
   <body>
-    <div class="body__container">
-      <header>
-        <nav class="nav">
-        <section class="nav__container">
-          <section  class="nav__left">
-          <button aria-label="open navigation" class="nav--open">☰</button>
-              <a href="index.html"><h1 class="nav__logo">Rising</h1></a>
-            </section>
-              <section>
-          <div class="nav__content">
-            <button aria-label="close navigation" class="nav--close">X</button>
-            <ul class="nav__menu"></ul>
-          </div>
+    <nav class="nav">
+      <section class="nav__left">
+      <button aria-label="open navigation" class="nav--open"><i class="fas fa-bars"></i></button>
+      <a href="index.html"><img class="logo"/></a>
         </section>
-        <section>
-          <ul class="nav__icons"></ul>
-        </nav>
-        </section>
-      </header>
+      <section class="nav__content">
+        <button aria-label="close navigation" class="nav--close">X</button>
+        <ul class="nav__menu"></ul>
+    </section>
+    <section class="nav__right">
+      <ul class="nav__icons"></ul>
+    </section>
+    </nav>
+    </header>
       <main id="main__container">
-        <h1 class="main--header">Add product</h1>
+        <h1 class="main--header">Admin page</h1>
       <div class="form-container">
-        <form class="form__add">
+        <form id="upload" action="/api/upload" method="post">
+          <input type="file" name="files" required />
+          <input type="text" name="ref" value="product" required />
+          <input type="text" name="refId" value="5c126648c7415f0c0ef1bccd" required />
+          <input type="text" name="field" value="cover" />
+          <button type="submit">Upload</button>
+          <button type="reset">Reset</button>
+
           <div class="message-container"></div>
           <div>
             <label for="title" class="form-item__label">Title</label>
@@ -49,20 +51,33 @@
             <label for="description" class="form-item__label">Description</label>
             <textarea id="description"></textarea>
           </div>
-          <div>
+          <!-- <div>
             <label for="featured" class="form-item__label">Featured item</label>
             <input id="featured" type="checkbox" />
-          </div>
-          <label for="upload_widget" class="form-item__label">Upload image</label>
-        <button id="upload_widget" class="cloudinary-button">Upload files</button>
-        <img alt="" id="uploadedimage" />
-        (edited)
+          </div> -->
+          <label for="featured"
+                            >Do you want to set this product in
+                            <strong>Featured Product</strong> ?</label
+                        >
+                        <label class="form-check-label" for="featured">
+                            <input
+                                name="featured"
+                                id="featured"
+                                type="checkbox"
+                                value="true"
+                            />
+                            Yes</label
+                        >
+                    </div>
+     
+
       </div>
+
       <button>Add</button>
     </form>
-    <section class="flex-container section--products">
+    <section class="flex section--products">
       <h2 class="products-title section__header">Edit Products</h2>
-      <div class="grid-container all-products">
+      <div class="grid all-products">
         <div class="loader"></div>
         <!-- <div class="products"></div> -->
       </div>

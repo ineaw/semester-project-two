@@ -12,10 +12,13 @@ const productsUrl = `${baseUrl}products`;
   try {
     const response = await fetch(productsUrl);
     const json = await response.json();
-    const items = json;
-    sortProducts(items);
-    searchProducts(items);
-    renderProducts(items);
+    const products = json;
+
+    const featuredContainer = products.filter((product) => product.featured === true);
+
+    sortProducts(products);
+    searchProducts(products);
+    renderProducts(products);
   } catch (error) {
     console.log(error);
   }

@@ -1,5 +1,5 @@
 import createMenu from "./components/createMenu.js";
-import { displayMessage } from "./components/displayMessages.js";
+import displayMessage from "./components/displayMessages.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import { renderEdit } from "./filter/renderEdit.js";
@@ -23,40 +23,48 @@ function submitForm(event) {
   const titleValue = title.value.trim();
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
+  // const featuredValue = featured.value();
 
   if (titleValue.length === 0 || priceValue.length === 0 || descriptionValue.length === 0) {
     return displayMessage("warning", "please supply proper values", ".message-container");
   }
 
-  const cloudName = "iwa"; // replace with your own cloud name
-  const uploadPreset = "bspotaqh"; // replace with your own upload preset
-
-  const myWidget = cloudinary.createUploadWidget(
-    {
-      cloudName: cloudName,
-      uploadPreset: uploadPreset,
-    },
-    (error, result) => {
-      if (!error && result && result.event === "success") {
-        console.log("Done! Here is the image info: ", result.info);
-        document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
-      }
-    }
-  );
-
-  document.getElementById("upload_widget").addEventListener(
-    "click",
-    function () {
-      myWidget.open();
-    },
-    false
-  );
+  addProduct(titleValue, priceValue, descriptionValue);
 }
-addProduct(titleValue, priceValue, descriptionValue);
 
-async function addProduct(title, price, description, image) {
+// const cloudName = "iwa"; // replace with your own cloud name
+// const uploadPreset = "bspotaqh"; // replace with your own upload preset
+// const myWidget = cloudinary.createUploadWidget(
+//   {
+//     cloudName: cloudName,
+//     uploadPreset: uploadPreset,
+//   },
+//   (error, result) => {
+//     if (!error && result && result.event === "success") {
+//       console.log("Done! Here is the image info: ", result.info);
+//       document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
+//     }
+//   }
+// );
+
+// document.getElementById("upload_widget").addEventListener(
+//   "click",
+//   function () {
+//     myWidget.open();
+//   },
+//   false
+// );
+
+async function onUpload(event) {
+  const form = event.target;
+  const url = form.action;
+  const method = form.method;
+  const body = new FormData(form);
+}
+
+async function addProduct(title, price, description, image, featured) {
   const url = baseUrl + "products";
-  const data = JSON.stringify({ title: title, price: price, description: description, image: image });
+  const data = JSON.stringify({ title: title, price: price, description: description, image: image, featured: featured });
 
   const token = getToken();
 

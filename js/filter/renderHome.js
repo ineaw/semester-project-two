@@ -1,48 +1,46 @@
-// import getExistingFavs from "../components/favFunctions.js";
-// import renderFavs from "../favs.js";
+export function renderFeatured(item) {
+  const featuredContainer = document.querySelector(".featured-products");
+  featuredContainer.innerHTML = "";
 
-// export function renderHome(items) {
-//   const productContainer = document.querySelector(".all-products");
-//   productContainer.innerHTML = "";
+  // Using a Ternary operator to see if the products are featured
 
-//   items.forEach((item) => {
-//     let favIcon = "far";
+  for (let i = 0; i < item.length; i++) {
+    const feat = item[i].featured ? "block" : "none";
 
-//     productContainer.innerHTML += `
-//         <div id="product" class="product flex-card">
-//         <figure class="product__figure">
-//         <i class="${favIcon} fa-heart" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}" data-description="${item.description}" data-image="${item.image.url}"></i>
-//         <a href="product.html?id=${item.id}">
-//         <img class="product__image" src="${item.image.formats.small.url}" alt="${item.title}">
-//         </a>
-//         </figure>
-//         <div class="product__info">
-//         <h4 class="product__title">${item.title}</h4>
-//         <h4 class="product__price">kr <span class="price-value">${item.price}</span></h6>
-//         </div>
-//         </div>
-//         `;
-//   });
-//   const favButtons = document.querySelectorAll("#product i");
+    featuredContainer.innerHTML += `
+          <div id="product" class="featured" style="display: ${feat}">
+          <figure class="featured__figure">
+          <a href="product.html?id=${item[i].id}">
+          <img class="product__image" src="${item[i].image.url}"  alt="${item[i].title}"/>
+          </a>
+          </figure>
+          <div class="product__info">
+          <h5 class="product__title">${item[i].title}</h5>
+          <h6 class="product__price">kr <span class="price-value">${item[i].price}</span></h6>
+          </div>
+          </div>
+          `;
+  }
+}
 
-//   favButtons.forEach((iconButton) => {
-//     iconButton.addEventListener("click", handleClick);
-//   });
-//   function handleClick() {
-//     this.classList.toggle("fa");
-//     this.classList.toggle("far");
+export function renderGallery(news) {
+  const galleryContainer = document.querySelector(".new-products");
+  galleryContainer.innerHTML = "";
 
-//     const id = this.dataset.id;
-//     const title = this.dataset.title;
-//     const description = this.dataset.description;
-//     const price = this.dataset.price;
-//     const image = this.dataset.image;
+  for (let i = 0; i < news.length; i++) {
+    if (i === 6) {
+      break;
+    }
 
-//     const currentFavs = getExistingFavs();
-
-//     const itemExists = currentFavs.find(function (fav) {
-//       return fav.id === id;
-//     });
-//   }
-//   renderFavs();
-// }
+    galleryContainer.innerHTML += `
+          <div class="news">
+          <figure class="news__figure">
+          <a href="product.html?id=${news[i].id}">
+          <img class="news__image" src="${news[i].image.url}"  alt="${news[i].title}"/>
+          </a>
+          </figure>
+          </div>
+          </div>
+          `;
+  }
+}

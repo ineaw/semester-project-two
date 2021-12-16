@@ -34,13 +34,13 @@
 // }
 
 /* CSS */
-button {
+.btn__accent {
   align-items: center;
-  background-color: #fee6e3;
+  background-color: $accent;
   border: 2px solid #111;
   cursor: pointer;
   display: flex;
-  height: 40px;
+  height: 2.5em;
   line-height: 1;
   justify-content: center;
   max-width: 150px;
@@ -53,11 +53,11 @@ button {
   touch-action: manipulation;
 }
 
-button:after {
+.btn__accent:after {
   background-color: #111;
   content: "";
   display: block;
-  height: 40px;
+  height: 2.5em;
   left: 0;
   width: 100%;
   position: absolute;
@@ -67,22 +67,33 @@ button:after {
   z-index: -1;
 }
 
-button:hover:after {
+.btn__accent:hover:after {
   transform: translate(0, 0);
 }
 
-button:active {
+.btn__accent:active {
   background-color: #ffdeda;
-  outline: 0;
 }
 
-button:hover {
-  outline: 0;
+.btn__cta {
+  height: 3em;
+  line-height: 1;
+  justify-content: center;
+  width: 250px;
+  padding: 0 1em;
+  position: relative;
+  align-items: center;
+  background-color: $accent;
+  border: 2px solid #111;
+  cursor: pointer;
 }
+
+// button:hover {
+//   outline: 0;
+// }
 
 .fa-shopping-cart {
-  margin-left: 16px;
-  margin-right: 10px;
+  margin: 0 5px;
 }
 
 .filters {
@@ -97,6 +108,25 @@ button:hover {
   flex-direction: row;
   gap: 1rem;
 }
+
+.featured-products button {
+  display: block;
+  padding: 0em 0.3em;
+  font-size: 3rem;
+  cursor: pointer;
+  // margin-top: 150px;
+  z-index: 3;
+}
+
+// #next-btn {
+//   right: 0;
+//   margin-right: 0px;
+// }
+
+// #prev-btn {
+//   left: 0;
+//   margin-left: 0px;
+// }
 
 @media (min-width: 768px) {
   .filters {

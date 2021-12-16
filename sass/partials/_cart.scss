@@ -17,9 +17,7 @@
   overflow-y: scroll;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
-  background: white;
-  width: 400px;
-  height: 100vh;
+  background: $accent;
   z-index: 4;
   position: fixed;
   top: 0;
@@ -28,20 +26,10 @@
   animation: fade 500ms;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
-  overflow: hidden;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  overscroll-behavior: contain;
-  background-color: #202020;
-  width: 300px;
-  height: 500px;
-  color: #f0f0f0;
-  z-index: 15;
-  position: fixed;
-  top: 20px;
-  right: 0;
-  text-align: center;
-  animation: fade 1s;
+  // background-color: #ffffff;
+  width: 40vw;
+  height: 100vh;
+  color: black;
 }
 
 .products-in-cart::-webkit-scrollbar {
@@ -93,7 +81,7 @@
   object-fit: cover;
 }
 
-.shopping-cart .sum-items {
+.shopping-cart #sum-items {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -111,8 +99,8 @@
   padding-left: 0.5em;
 }
 
-.sum-prices h6 {
-  font-size: 0.9rem;
+#sum-items {
+  font-size: 1rem;
 }
 
 #close__button {
@@ -130,7 +118,7 @@
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.877);
+  background: rgba(255, 255, 255, 0.331);
 }
 
 .buy-item__btn {

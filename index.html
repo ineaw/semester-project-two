@@ -12,55 +12,46 @@
     <link rel="icon" href="data:;base64,=" />
   </head>
   <body>
-    <div class="body__container">
       <header>
         <nav class="nav">
-        <section class="nav__container">
-          <section  class="nav__left">
+          <div class="nav__left">
           <button aria-label="open navigation" class="nav--open"><i class="fas fa-bars"></i></button>
-              <a href="index.html"><h1 class="nav__logo">Rising</h1></a>
-            </section>
-              <section>
+          <a href="index.html"><img class="logo"/></a>
           <div class="nav__content">
             <button aria-label="close navigation" class="nav--close">X</button>
             <ul class="nav__menu"></ul>
           </div>
-        </section>
-        <section>
-          <ul class="nav__icons"></ul>
+        </div>
+        <div class="nav__icons"></div>
+      </section>
         </nav>
-        </section>
       </header>
-      <!--Main-->
-      <main id="main">
+      <main>
         <section class="hero">
           <div class="loader"></div>
         </section>
-        <section class="carousel__wrap">
-          <div class="featured__div">         
-             <!-- <div class="flex-card featured-title">
+        <section class="flex section--feat">
                <h2>Our Most Loved</h2>
              <p>stay ahead</p>
              <a href="#">shop new</a>
-            </div> -->
-          <div class="featured-products">
+          <div class="grid featured-products">
             <div class="loader"></div>
           </div>
         </div>
         </section>
-        <section class="flex-container section--products">
-          <h2 class="products-title section__header">All Products</h2>
-          <div class="grid-container all-products">
-            <div class="loader"></div>
-            <!-- <div class="products"></div> -->
-          </div>
-        </section>
-        <section class="flex-container flex--news">
-          <div class="news__container">
+        <section class="flex section--products">
+          <h2 class="products-title">Get inspired</h2>
+          <div class="grid all-products">
             <div class="loader"></div>
           </div>
         </section>
-        <section class="flex-container section__color">
+        <section class="flex flex--news">
+          <div class="news-container">
+          <div class="new-products">
+            <div class="loader"></div>
+          </div>
+        </section>
+        <section class="flex section--color">
           <div class="newsletter">
               <h2 class="section__header">Newsletter</h2>
             <p class="newsletter__text">Sign up to explore the Rising Universe, <em>right in your inbox.</em></p>
@@ -74,6 +65,50 @@
           </div>
         </section>
       </main>
+
+      <!--Main-->
+      <!-- <main>
+        <section class="hero">
+          <div class="loader"></div>
+        </section>
+        <section class="carousel__wrap">
+          <div class="featured__div">         
+             <div class="flex-card featured-title">
+               <h2>Our Most Loved</h2>
+             <p>stay ahead</p>
+             <a href="#">shop new</a>
+            </div> 
+          <div class="featured-products">
+            <div class="loader"></div>
+          </div>
+        </div>
+        </section>
+        <section class="flex section--products">
+          <h2 class="products-title section__header">All Products</h2>
+          <div class="grid all-products">
+            <div class="loader"></div>
+          </div>
+        </section>
+        <section class="flex flex--news">
+          <div class="news-container">
+          <div class="new-products">
+            <div class="loader"></div>
+          </div>
+        </section>
+        <section class="flex section__color">
+          <div class="newsletter">
+              <h2 class="section__header">Newsletter</h2>
+            <p class="newsletter__text">Sign up to explore the Rising Universe, <em>right in your inbox.</em></p>
+            <div class="sign-up">
+              <label for="email">
+                <input type="email" placeholder="Enter your e-mail address" id="signup-email" name="newsletter" aria-label="newsletter sign-up form" />
+              </label>
+              <button class="sign-up__btn" role="button">Subscribe</button>
+            </div>
+            <div class="message-container"></div>
+          </div>
+        </section>
+      </main> -->
       <footer>
         <section class="footer">
           <ul class="flex-container footer__main">
@@ -96,6 +131,5 @@
         <p class="copyright">© Copyright 2021. All rights reserved. Website by Ine AW.</p>
       </footer>
       <script src="js/index.js" type="module"></script>
-    </div>
   </body>
 </html>

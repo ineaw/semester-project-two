@@ -15,7 +15,7 @@ form {
 input,
 textarea {
   padding: 0.5em;
-  border: 2px solid $sub;
+  border: 2px solid black;
 }
 
 textarea {
@@ -26,7 +26,6 @@ textarea {
 form input,
 form textarea {
   width: 100%;
-  color: var(--clr-main-dark);
 }
 
 form > div {
@@ -35,7 +34,8 @@ form > div {
 
 .search {
   &__input {
-    padding: 0.2rem;
+    padding: 0.5rem;
+    height: 2.5em;
     width: 150px;
     border: 2px solid black;
   }

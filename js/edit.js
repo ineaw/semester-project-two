@@ -1,8 +1,8 @@
-import { baseUrl } from "./settings/api.js";
+// import displayMessage from "./components/displayMessage.js";
 import { getToken } from "./utils/storage.js";
+import { baseUrl } from "./settings/api.js";
 import createMenu from "./components/createMenu.js";
-import deleteButton from "./components/articles/deleteButton.js";
-import { displayMessage } from "./components/displayMessages.js";
+// import deleteButton from "./components/articles/deleteButton.js";
 
 createMenu();
 
@@ -22,7 +22,7 @@ const form = document.querySelector("form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
-const image = document.querySelector("#image");
+const image = document.querySelector("#file");
 const idInput = document.querySelector("#id");
 const message = document.querySelector(".message-container");
 const loader = document.querySelector(".loader");
