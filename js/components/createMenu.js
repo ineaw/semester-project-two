@@ -38,11 +38,11 @@ export default function createMenu() {
   </div>
   <div class="products-in-cart hide">
   <div class="overlay"></div>
-  <div class="products-in-cart--header">
+  <div class="products-in-cart-header">
   <button id="close-button" class="products-in-cart--btn">
   x
   </button>
-  <h2>Cart</h2>
+  <h4>Cart</h4>
   </div>
   <ul id="buy-items">
   <h4 class="empty">Your shopping cart is empty</h4>
@@ -51,7 +51,7 @@ export default function createMenu() {
   <button class="btn checkout hidden">Check out</button>
   <button id="clear-cart" type="button">Clear Cart</button>
   </li>
-  <li class="nav-icon"><h6 id="sum-items"></h6></li>
+  <li class="nav-icon"><div id="sum-items"><h6 class="sum"></h6></div></li>
 
   `;
   logoutButton();
