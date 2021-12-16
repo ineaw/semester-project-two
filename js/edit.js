@@ -1,8 +1,7 @@
-// import displayMessage from "./components/displayMessage.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./components/createMenu.js";
-// import deleteButton from "./components/articles/deleteButton.js";
+import deleteButton from "./components/articles/deleteButton.js";
 
 createMenu();
 

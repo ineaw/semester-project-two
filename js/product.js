@@ -33,18 +33,16 @@ const shopping = getExistingItems();
     const item = json;
     console.log(json);
     changeTitle.innerHTML = `${item.title} | Moon Rising`;
-    detailContainer.innerHTML += `       
-        <div class="detail detail-card">
-        <div class="product-under"> 
+    detailContainer.innerHTML = `       
+        <div class="detail"> 
         <figure class="detail__figure">
         <img class="detail__image" src="${item.image.url}" alt="${item.title}">
         </figure>
         <div class="detail__info">
         <h2 class="detail__title">${item.title}</h2>
-        <h3 class="detail__price"><span class="price">${item.price}</span>kr</h3>
-        <button class="btn btn-small addToCart" data-product-id="${item.id}"><i class="fas fa-cart-plus"></i>Add to cart</button>
+        <h3 class="detail__price"><span class="price">${item.price}</span> kr</h3>
+        <button class="btn--add add-to-cart" data-product-id="${item.id}"><i class="fas fa-cart-plus"></i>Add to cart</button>
         <p class="detail__description">${item.description}</p>
-        </div>
         </div>
         </div>
       `;
@@ -62,7 +60,7 @@ const shopping = getExistingItems();
     }
     const parentElement = document.querySelector("#buy-items");
     const cartSumPrice = document.querySelector("#sum-prices");
-    const products = document.querySelectorAll(".product-under");
+    const products = document.querySelectorAll(".detail");
     const cartNumbers = document.querySelector("#sum-items");
 
     const countTheSumPrice = function () {
@@ -137,7 +135,7 @@ const shopping = getExistingItems();
     products.forEach((item) => {
       console.log(item);
       item.addEventListener("click", (e) => {
-        if (e.target.classList.contains("addToCart")) {
+        if (e.target.classList.contains("add-to-cart")) {
           const productID = e.target.dataset.productId;
           const productName = item.querySelector(".detail__title").innerHTML;
           const productPrice = item.querySelector(".price").innerHTML;

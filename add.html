@@ -14,30 +14,27 @@
   </head>
   <body>
     <nav class="nav">
-      <section class="nav__left">
+      <div class="nav__left">
       <button aria-label="open navigation" class="nav--open"><i class="fas fa-bars"></i></button>
       <a href="index.html"><img class="logo"/></a>
-        </section>
-      <section class="nav__content">
+      <div class="nav__content">
         <button aria-label="close navigation" class="nav--close">X</button>
         <ul class="nav__menu"></ul>
-    </section>
-    <section class="nav__right">
-      <ul class="nav__icons"></ul>
-    </section>
+      </div>
+    </div>
+    <div class="nav__icons"></div>
+  </section>
     </nav>
-    </header>
-      <main id="main__container">
+  </header>
+     <ul class="breadcrumbs">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="add.html">Admin</a></li>
+     </ul>
+      <main class="flex">
         <h1 class="main--header">Admin page</h1>
       <div class="form-container">
         <form id="upload" action="/api/upload" method="post">
-          <input type="file" name="files" required />
-          <input type="text" name="ref" value="product" required />
-          <input type="text" name="refId" value="5c126648c7415f0c0ef1bccd" required />
-          <input type="text" name="field" value="cover" />
-          <button type="submit">Upload</button>
-          <button type="reset">Reset</button>
-
+          <h2 class="products-title section__header">Add Products</h2>
           <div class="message-container"></div>
           <div>
             <label for="title" class="form-item__label">Title</label>
@@ -51,29 +48,23 @@
             <label for="description" class="form-item__label">Description</label>
             <textarea id="description"></textarea>
           </div>
-          <!-- <div>
-            <label for="featured" class="form-item__label">Featured item</label>
-            <input id="featured" type="checkbox" />
-          </div> -->
-          <label for="featured"
-                            >Do you want to set this product in
-                            <strong>Featured Product</strong> ?</label
-                        >
-                        <label class="form-check-label" for="featured">
-                            <input
-                                name="featured"
-                                id="featured"
-                                type="checkbox"
-                                value="true"
-                            />
-                            Yes</label
-                        >
-                    </div>
-     
-
+          <div>
+            <label for="image" class="form-item__label">Image Upload</label>
+              <input type="file" name="files" required />
+                <input type="text" name="ref" value="product" required />
+                  <input type="text" name="refId" value="5c126648c7415f0c0ef1bccd" required />
+                    <input type="text" name="field" value="cover" />
+                      <button type="submit">Upload</button>
+                      <button type="reset">Reset</button>
+                      </div>
+                      <div>
+                     <label for="featured">Is this product<strong> Featured</strong> ?</label>
+                  <label class="form-check-label" for="featured">
+                <input name="featured" id="featured" type="checkbox" value="true"/> Yes</label>
+              </div>  
+            <button>Add</button>
+        </div>
       </div>
-
-      <button>Add</button>
     </form>
     <section class="flex section--products">
       <h2 class="products-title section__header">Edit Products</h2>

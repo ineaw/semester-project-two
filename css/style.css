@@ -119,12 +119,13 @@ body > footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 90vh;
   position: relative;
 }
 
 .hero__title {
   font-size: 5rem;
+  color: #f8dbe0;
   z-index: 1;
   max-width: 90vw;
   line-height: 1.1;
@@ -143,9 +144,9 @@ body > footer {
   }
   .hero__image {
     background-size: cover;
-    background-position: center;
+    background-position: center left;
     background-repeat: no-repeat;
-    height: 90vh;
+    height: 80vh;
   }
   .hero__title {
     font-size: 5rem;
@@ -159,26 +160,8 @@ body > footer {
   Layout
   ====== */
 /* Containers */
-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .grid {
   text-align: center;
-  display: -ms-grid;
-  display: grid;
   place-items: center;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
@@ -190,9 +173,6 @@ main {
 }
 
 .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -203,7 +183,6 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 1rem;
 }
 
 /* product cards */
@@ -286,9 +265,9 @@ main {
 }
 
 .new-products {
-  text-align: center;
   display: -ms-grid;
   display: grid;
+  text-align: center;
   place-items: center;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
@@ -347,7 +326,7 @@ main {
 }
 
 /* Singel product */
-.detail-card {
+.detail {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -362,7 +341,7 @@ main {
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .detail__image {
@@ -377,7 +356,7 @@ main {
 
 .detail__info {
   width: 85vw;
-  color: #5e85f0;
+  color: #333;
 }
 
 .detail__title, .detail__price, .detail__description {
@@ -409,14 +388,11 @@ main {
     height: 20rem;
     width: 15rem;
   }
-  .detail-card {
+  .detail {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .detail__figure {
     position: relative;
@@ -429,7 +405,7 @@ main {
   }
   .detail__info {
     width: 30vw;
-    color: #5e85f0;
+    color: #333;
   }
   .detail__title, .detail__price, .detail__description {
     margin-bottom: 0.2rem;
@@ -504,7 +480,6 @@ main {
 }
 
 .nav__left, .nav__icons {
-  margin-right: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -518,7 +493,8 @@ main {
 }
 
 .nav__icons i {
-  margin-top: 2.7rem;
+  margin-top: 2.8rem;
+  margin-right: 0.4rem;
   font-size: 1.2rem;
 }
 
@@ -559,7 +535,7 @@ main {
 
 .nav--close {
   font-size: 2rem;
-  padding: 0 1em;
+  padding: 1rem;
   position: absolute;
 }
 
@@ -575,7 +551,7 @@ main {
           transform: scaleX(0);
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  background: #ffcd8c;
+  background: #333;
 }
 
 .nav__link:hover::before {
@@ -589,7 +565,7 @@ main {
   background: none;
   border: none;
   cursor: pointer;
-  color: #5e85f0;
+  color: #333;
 }
 
 .navigation--open {
@@ -730,8 +706,15 @@ a {
 }
 
 h1 {
-  color: #f8dbe0;
+  color: #333;
   font-family: "ivypresto-display", serif;
+  font-size: 3.75rem;
+}
+
+h2 {
+  color: #333;
+  font-family: "ivypresto-display", serif;
+  font-size: 2.875rem;
 }
 
 /* CSS */
@@ -879,7 +862,12 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f8dbe0;
   padding: 2rem;
+  margin-top: 3rem;
 }
 
 .footer {
@@ -893,6 +881,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 0.5rem;
 }
 
 .footer__social, .footer__main {
@@ -907,10 +896,7 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 0.5rem;
-}
-
-.footer__social --link, .footer__main --link {
-  margin-right: 1em;
+  padding: 0;
 }
 
 .copyright {
@@ -931,9 +917,9 @@ footer {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: top;
-        -ms-flex-align: top;
-            align-items: top;
+  }
+  .footer__social, .footer__main {
+    padding-inline: 4rem;
   }
 }
 
