@@ -6,10 +6,10 @@ import { toggleOutFavs } from "./components/toggleFavourites.js";
 
 createMenu();
 export const favourites = getExistingFavs();
-clearFavButton();
 
 const favContainer = document.querySelector(".fav-container");
 const clearFavBtn = document.querySelector("#clear-favs--btn");
+clearFavButton();
 
 favContainer.innerHTML = "";
 

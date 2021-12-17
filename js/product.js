@@ -42,7 +42,7 @@ detailContainer.innerHTML = "";
         <div class="detail__info">
         <h2 class="detail__title">${item.title}</h2>
         <h3 class="detail__price"><span class="price">${item.price}</span> kr</h3>
-        <button class="btn--add add-to-cart" data-product-id="${item.id}"><i class="fas fa-cart-plus"></i>Add to cart</button>
+        <button class="btn-accent add-to-cart" data-product-id="${item.id}"><i class="fas fa-cart-plus"></i>Add to cart</button>
         <p class="detail__description">${item.description}</p>
         </div>
         </div>

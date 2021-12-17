@@ -227,7 +227,7 @@ body > footer {
 .product__figure > i {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   cursor: pointer;
   padding: 0.5em;
   font-size: 1.5rem;
@@ -440,6 +440,7 @@ body > footer {
 
 .logo {
   width: 100px;
+  margin-left: 3rem;
 }
 
 .nav {
@@ -576,43 +577,34 @@ body > footer {
 }
 
 @media (min-width: 678px) {
-  .nav__link {
-    font-size: 1.2rem;
+  .breadcrumbs {
+    margin: 0;
+    padding: 1em;
   }
-}
-
-.breadcrumbs {
-  margin: 0;
-  padding: 1em;
-}
-
-.breadcrumbs li {
-  display: inline-block;
-  position: relative;
-  margin-right: 1em;
-}
-
-.breadcrumbs li:after {
-  content: "❯";
-  position: absolute;
-  display: inline-block;
-  text-align: center;
-  font-weight: 400;
-  margin-left: 0.3em;
-  font-size: 1em;
-}
-
-.breadcrumbs li:last-child:after {
-  content: "";
-}
-
-.breadcrumbs li:last-child {
-  font-weight: 600;
-}
-
-.breadcrumbs a,
-.breadcrumbs p {
-  display: inline-block;
+  .breadcrumbs li {
+    display: inline-block;
+    position: relative;
+    margin-right: 1em;
+  }
+  .breadcrumbs li:after {
+    content: "❯";
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    font-weight: 400;
+    margin-left: 0.3em;
+    font-size: 1em;
+  }
+  .breadcrumbs li:last-child:after {
+    content: "";
+  }
+  .breadcrumbs li:last-child {
+    font-weight: 600;
+  }
+  .breadcrumbs a,
+  .breadcrumbs p {
+    display: inline-block;
+  }
 }
 
 label {
@@ -711,8 +703,7 @@ h2 {
   font-size: 2.875rem;
 }
 
-/* CSS */
-.btn__accent {
+.btn-accent {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -739,7 +730,7 @@ h2 {
       touch-action: manipulation;
 }
 
-.btn__accent:after {
+.btn-accent:after {
   background-color: #111;
   content: "";
   display: block;
@@ -757,29 +748,36 @@ h2 {
   z-index: -1;
 }
 
-.btn__accent:hover:after {
+.btn-accent:hover:after {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
-.btn__accent:active {
+.btn__cta--main:active,
+.btn-accent:active {
   background-color: #ffdeda;
 }
 
-.btn__cta {
-  height: 3em;
+.btn__cta--main:hover {
+  background-color: #ffdeda;
+}
+
+.btn__cta--main {
   line-height: 1;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 4rem;
   width: 250px;
-  padding: 0 1em;
+  padding: 1em 0;
   position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: #f8dbe0;
-  border: 2px solid #111;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -812,14 +810,6 @@ h2 {
   gap: 1rem;
 }
 
-.featured-products button {
-  display: block;
-  padding: 0em 0.3em;
-  font-size: 3rem;
-  cursor: pointer;
-  z-index: 3;
-}
-
 #close-button {
   font-size: 2rem;
   padding: 2rem;
@@ -830,6 +820,8 @@ h2 {
   position: absolute;
 }
 
+.checkout,
+#clear-favs--btn,
 #clear-cart {
   -webkit-box-align: center;
       -ms-flex-align: center;

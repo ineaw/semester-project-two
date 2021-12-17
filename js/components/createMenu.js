@@ -48,11 +48,10 @@ export default function createMenu() {
   <h4 class="cart-message">Your cart is empty</h4>
   </ul>
   <h4 id="sum-prices"></h4>
-  <button class="btn checkout disabled">Check out</button>
+  <button class="checkout disabled">Check out</button>
   <button id="clear-cart" type="button">Clear Cart</button>
   </li>
   <li class="nav-icon"><div id="sum"><h6 id="sum-items"></h6></div></li>
-
   `;
   logoutButton();
   //   clearCartButton();

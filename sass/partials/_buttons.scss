@@ -1,4 +1,4 @@
-@mixin btn-shadow($color, $shadowColor, $borderWidth: 2px) {
+@mixin btn-cta($color, $shadowColor, $borderWidth: 2px) {
   position: relative;
 
   padding: 1rem 2rem 0.5rem 2.5rem;
@@ -8,33 +8,7 @@
   transition: padding 0.3s ease-in-out;
 }
 
-// button {
-//   padding: 1em 2em;
-//   text-decoration: none;
-//   text-transform: uppercase;
-//   border-radius: 5px;
-//   position: relative;
-//   display: inline-block;
-//   line-height: 1;
-//   background-color: $accent;
-//   color: $sub;
-//   outline: transparent;
-// }
-
-// button::after {
-//   content: "";
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   border: $accent 2px solid;
-//   left: -4px;
-//   top: 4px;
-//   border-radius: inherit;
-//   z-index: -1;
-// }
-
-/* CSS */
-.btn__accent {
+.btn-accent {
   align-items: center;
   background-color: $accent;
   border: 2px solid #111;
@@ -52,7 +26,7 @@
   touch-action: manipulation;
 }
 
-.btn__accent:after {
+.btn-accent:after {
   background-color: #111;
   content: "";
   display: block;
@@ -66,24 +40,31 @@
   z-index: -1;
 }
 
-.btn__accent:hover:after {
+.btn-accent:hover:after {
   transform: translate(0, 0);
 }
 
-.btn__accent:active {
+.btn__cta--main:active,
+.btn-accent:active {
   background-color: #ffdeda;
 }
 
-.btn__cta {
-  height: 3em;
+.btn__cta--main:hover {
+  background-color: #ffdeda;
+}
+
+.btn__cta--main {
   line-height: 1;
   justify-content: center;
+  margin-top: 4rem;
   width: 250px;
-  padding: 0 1em;
+  padding: 1em 0;
   position: relative;
   align-items: center;
   background-color: $accent;
-  border: 2px solid #111;
+  font-size: $fs-base;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -108,14 +89,14 @@
   gap: 1rem;
 }
 
-.featured-products button {
-  display: block;
-  padding: 0em 0.3em;
-  font-size: 3rem;
-  cursor: pointer;
-  // margin-top: 150px;
-  z-index: 3;
-}
+// .featured-products button {
+//   display: block;
+//   padding: 0em 0.3em;
+//   font-size: 3rem;
+//   cursor: pointer;
+//   // margin-top: 150px;
+//   z-index: 3;
+// }
 
 // #next-btn {
 //   right: 0;
@@ -137,6 +118,8 @@
   position: absolute;
 }
 
+.checkout,
+#clear-favs--btn,
 #clear-cart {
   align-items: center;
   background-color: $accent;

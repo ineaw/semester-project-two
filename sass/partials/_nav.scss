@@ -1,7 +1,6 @@
 .logo {
-  //   top: 4rem;
   width: 100px;
-  // }
+  margin-left: 3rem;
 }
 .nav {
   padding: 2em;
@@ -12,15 +11,10 @@
   align-items: center;
   height: 100px;
   background-color: $accent;
-  // height: 430px;
-  // padding: 1.5rem 2rem;
   &__links {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    // justify-content: space-between;
-    // align-items: center;
     margin: 0 auto;
     color: $main;
   }
@@ -38,7 +32,6 @@
   }
 
   &__icons i {
-    // margin-top: 2.8rem;
     margin-right: 0.4rem;
     font-size: 1.2rem;
   }
@@ -109,71 +102,37 @@
 }
 
 @media (min-width: 678px) {
-  .nav {
-    //   &__content {
-    //     position: initial;
-    //     flex-direction: row;
-    //     background-color: transparent;
-    //   }
-
-    // &__links {
-    //   flex-direction: row;
-    //   margin-top: 0em;
-    //   display: inline-block;
-    // }
-
-    &__link {
-      font-size: $fs-nav;
-    }
-
-    // &__menu {
-    //   flex-direction: row;
-    //   margin-top: 0;
-    // }
-
-    // &__icons i {
-    //   margin-top: 1.5rem;
-    //   margin-right: 0.5rem;
-    //   font-size: 1.2rem;
-    // }
+  .breadcrumbs {
+    margin: 0;
+    padding: 1em;
   }
 
-  // .nav--open,
-  // .nav--close {
-  //   display: none;
-  // }
-}
+  .breadcrumbs li {
+    display: inline-block;
+    position: relative;
+    margin-right: 1em;
+  }
 
-.breadcrumbs {
-  margin: 0;
-  padding: 1em;
-}
+  .breadcrumbs li:after {
+    content: "❯";
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    font-weight: 400;
+    margin-left: 0.3em;
+    font-size: 1em;
+  }
 
-.breadcrumbs li {
-  display: inline-block;
-  position: relative;
-  margin-right: 1em;
-}
+  .breadcrumbs li:last-child:after {
+    content: "";
+  }
 
-.breadcrumbs li:after {
-  content: "❯";
-  position: absolute;
-  display: inline-block;
-  text-align: center;
-  font-weight: 400;
-  margin-left: 0.3em;
-  font-size: 1em;
-}
+  .breadcrumbs li:last-child {
+    font-weight: 600;
+  }
 
-.breadcrumbs li:last-child:after {
-  content: "";
-}
-
-.breadcrumbs li:last-child {
-  font-weight: 600;
-}
-
-.breadcrumbs a,
-.breadcrumbs p {
-  display: inline-block;
+  .breadcrumbs a,
+  .breadcrumbs p {
+    display: inline-block;
+  }
 }
