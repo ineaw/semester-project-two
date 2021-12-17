@@ -22,22 +22,27 @@
           <ul class="nav__menu"></ul>
         </div>
       </div>
-      <a href="index.html"><img class="logo" src="/images/logo.png"/></a>
+      <a href="index.html"><img class="logo" src="images/logo.png"/></a>
       <div class="nav__icons"></div>
     </section>
       </nav>
     </header>
+    <ul class="breadcrumbs">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="admin.html">Admin</a></li>
+      <li><a href="add.html">Add</a></li>
+       </ul>  
       <main class="flex">
         <h1 class="main--header">Add product</h1>
       <div class="form-container">
         <form class="form__add">
           <div class="message-container"></div>
           <div>
-            <label for="title" class="form-item__label">Title</label>
+            <label for="title" class="form-item__label">Title *Required</label>
             <input id="title" />
           </div>
           <div>
-            <label for="price" class="form-item__label">Price</label>
+            <label for="price" class="form-item__label">Price *Required</label>
             <input id="price" />
           </div>
           <div>
@@ -45,14 +50,12 @@
             <textarea id="description"></textarea>
           </div>
           <div>
-             <!-- <label for="image" class="image">Upload image</label> -->
-       <div class="image-uploadBtn">
-           <button class="btn" id="imageuploadBtn">press to add image url</button>
+             <label for="image" class="form-item__label">Upload image</label>
+          <div class="image-uploadBtn">
+           <button class="btn-accent" id="imageuploadBtn">Press to add image url</button>
+            <input type="text" id="imageURL" class="form-control" placeholder="your uploaded url" /> 
+        <button class="btn-accent">Add new product</button>
           </div>
-            <input type="text" id="imageURL" class="form-control" placeholder="url here" /> 
-         <!-- <img id="uploadedimage" src=""/> -->
-        (edited)
-    <button>Add</button>
     </div>
   </div>
     </form>

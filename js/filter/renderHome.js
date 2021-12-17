@@ -10,16 +10,16 @@ export function renderFeatured(item) {
     console.log(feat);
 
     featuredContainer.innerHTML += `
-          <div id="product" class="featured" style="display: ${feat}">
+          <div class="featured" style="display: ${feat}">
           <figure class="featured__figure">
           <a href="product.html?id=${item[i].id}">
           <img class="product__image" src="${item[i].image_url}"  alt="${item[i].title}"/>
-          </a>
           </figure>
           <div class="product__info">
-          <h5 class="product__title">${item[i].title}</h5>
-          <h6 class="product__price">kr <span class="price-value">${item[i].price}</span></h6>
+          <h4 class="product__title">${item[i].title}</h4>
+          <h4 class="product__price">kr <span class="price-value">${item[i].price}</span></h4>
           </div>
+          </a>
           </div>
           `;
   }

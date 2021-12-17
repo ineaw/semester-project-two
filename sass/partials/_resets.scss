@@ -76,17 +76,19 @@ select {
 
 .flex {
   display: flex;
+  margin-inline: auto;
 }
 
 .grid {
   display: grid;
-}
-
-.container {
-  padding-inline: 2em;
-  max-width: 80rem;
   margin-inline: auto;
 }
+
+// .container {
+//   padding-inline: 2em;
+//   max-width: 80rem;
+//   margin-inline: auto;
+// }
 
 .sr-only {
   position: absolute;

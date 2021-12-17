@@ -19,7 +19,7 @@ export default function createMenu() {
 
   if (username) {
     authLink = `
-                <li class="nav__link"><a href="add.html" class="${pathname === "/add.html" ? "active" : ""}"><i class="far fa-user"></i></a></li>
+                <li class="nav__icon"><a href="add.html" class="${pathname === "/add.html" ? "active" : ""}"><i class="far fa-user"></i></a></li>
      `;
   }
 
@@ -35,23 +35,24 @@ export default function createMenu() {
   <li class="nav__icon">
   <li class="shopping-cart">
   <i class="fas fa-shopping-cart shopping-cart__btn"></i>
-  </div>
   <div class="products-in-cart hidden">
   <div class="overlay"></div>
   <div class="products-in-cart__header">
   <button id="close-button" class="products-in-cart__btn">
-  x
+  <i class="fas fa-times"></i>
   </button>
-  <h4>Cart</h4>
+  <h2 class="cart__header">Cart</h2>
   </div>
   <ul id="buy-items">
   <h4 class="cart-message">Your cart is empty</h4>
   </ul>
   <h4 id="sum-prices"></h4>
+  <div class="cart-buttons">
   <button class="checkout disabled">Check out</button>
   <button id="clear-cart" type="button">Clear Cart</button>
+  </div>
   </li>
-  <li class="nav-icon"><div id="sum"><h6 id="sum-items"></h6></div></li>
+  <li class="nav-icon"><h6 id="sum-items"></h6></li>
   `;
   logoutButton();
   //   clearCartButton();

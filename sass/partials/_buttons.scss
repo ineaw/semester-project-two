@@ -17,7 +17,7 @@
   height: 2.5em;
   line-height: 1;
   justify-content: center;
-  max-width: 150px;
+  width: 100%;
   padding: 0 1em;
   position: relative;
   text-align: center;
@@ -63,9 +63,16 @@
   align-items: center;
   background-color: $accent;
   font-size: $fs-base;
-  border: none;
-  border-radius: 10px;
+  border: 2px solid #111;
   cursor: pointer;
+}
+
+.feat-cta {
+  border-bottom: rgb(0, 0, 0) 2px solid;
+}
+
+.feat-cta:hover {
+  border-bottom: $accent 2px solid;
 }
 
 // button:hover {
@@ -81,6 +88,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  padding-bottom: 4rem;
 }
 
 .sort {
@@ -118,6 +126,7 @@
   position: absolute;
 }
 
+#imageuploadBtn,
 .checkout,
 #clear-favs--btn,
 #clear-cart {
@@ -125,24 +134,24 @@
   background-color: $accent;
   border: 2px solid #111;
   cursor: pointer;
-  height: 2.5em;
   line-height: 1;
-  max-width: 150px;
-  padding: 0 1em;
+  max-width: 350px;
+  padding: 1em 1.5em;
   text-align: center;
 }
 
-.image-uploadBtn {
-  align-items: center;
-  background-color: $accent;
-  border: 2px solid #111;
-  cursor: pointer;
-  height: 2.5em;
-  line-height: 1;
-  max-width: 150px;
-  padding: 1em;
-  text-align: center;
-}
+// .image-uploadBtn {
+//   align-items: center;
+//   background-color: $accent;
+//   border: 2px solid #111;
+//   cursor: pointer;
+//   height: 2.5em;
+//   line-height: 1;
+//   max-width: 150px;
+//   padding: 1em;
+//   text-align: center;
+// }
+
 @media (min-width: 768px) {
   .filters {
     display: flex;

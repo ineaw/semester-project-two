@@ -5,6 +5,7 @@ import clearCartButton from "./components/articles/clearCartButton.js";
 import { addToCart } from "./filter/addToCart.js";
 import { getCartItems } from "./components/getCartItems.js";
 import { countItems, countSum } from "./components/countItems.js";
+import { renderFeatured } from "./filter/renderHome.js";
 
 createMenu();
 clearCartButton();
@@ -32,6 +33,7 @@ detailContainer.innerHTML = "";
     const json = await response.json();
 
     const item = json;
+
     console.log(json);
     changeTitle.innerHTML = `${item.title} | Moon Rising`;
     detailContainer.innerHTML = `       
@@ -126,6 +128,7 @@ detailContainer.innerHTML = "";
     //     updateShoppingCartHTML();
     //   }
     // });
+
     updateShoppingCartHTML();
   } catch (error) {
     console.log(error);

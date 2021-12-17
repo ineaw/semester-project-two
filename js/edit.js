@@ -22,7 +22,7 @@ const form = document.querySelector("form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
-const image = document.querySelector("#file");
+const image = document.querySelector("#imageURL");
 const idInput = document.querySelector("#id");
 const message = document.querySelector(".message-container");
 const loader = document.querySelector(".loader");
@@ -55,10 +55,32 @@ function submitForm(event) {
   message.innerHTML = "";
 
   const titleValue = title.value.trim();
-  const priceValue = price.value.trim();
+  const priceValue = parseInt(price.value);
   const descriptionValue = description.value.trim();
-  const imageValue = image.value;
+  const imageValue = image.value.trim();
   const idValue = idInput.value;
+
+  const cloudName = "iwa"; // replace with your own cloud name
+  const uploadPreset = "bspotaqh"; // replace with your own upload preset
+  const myWidget = cloudinary.createUploadWidget(
+    {
+      cloudName: cloudName,
+      uploadPreset: uploadPreset,
+    },
+    (error, result) => {
+      if (!error && result && result.event === "success") {
+        console.log("Done! Here is the image info: ", result.info);
+        image.value = `${result.info.url}`;
+      }
+    }
+  );
+  document.getElementById("imageuploadBtn").addEventListener(
+    "click",
+    function () {
+      myWidget.open();
+    },
+    false
+  );
 
   if (titleValue.length === 0 || priceValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0) {
     return displayMessage("warning", "please supply proper login values", ".message-container");
@@ -70,7 +92,7 @@ function submitForm(event) {
 async function updateProduct(title, price, description, image, id) {
   const url = baseUrl + "products/" + id;
 
-  const data = JSON.stringify({ title: title, price: price, image: image, description: description });
+  const data = JSON.stringify({ title: title, price: price, image_url: image, description: description });
 
   const token = getToken();
 
@@ -89,6 +111,7 @@ async function updateProduct(title, price, description, image, id) {
 
     if (json.created_at) {
       displayMessage("success", "item updated", ".message-container");
+      form.reset();
     }
 
     if (json.error) {

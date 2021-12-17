@@ -1,7 +1,6 @@
 import { baseUrl } from "../../settings/api.js";
 import { getToken } from "../../utils/storage.js";
-import displayMessage from "../displayMessage.js";
-
+import displayMessage from "../displayMessages.js";
 export default function deleteButton(id) {
   const container = document.querySelector(".delete-container");
 
@@ -31,7 +30,6 @@ export default function deleteButton(id) {
         const json = await response.json();
         if (json.created_at) {
           displayMessage("success", "item deleted", ".message-container");
-
           location.href = "/";
         }
 

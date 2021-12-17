@@ -18,6 +18,6 @@ createMenu();
     renderGallery(items);
   } catch (error) {
     console.log(error);
-    // displayMessage("error", error, ".product__container");
+    displayMessage("error", error, ".product__container");
   }
 })();

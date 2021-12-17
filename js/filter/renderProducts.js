@@ -24,7 +24,7 @@ export function renderProducts(products) {
                                     </a>
                                     </figure>
                                     <div class="product__info">
-                                    <h4 class="product__title">${product.title}</h4>
+                                    <h3 class="product__title">${product.title}</h3>
                                     <h4 class="product__price">kr <span class="price-value">${product.price}</span></h6>
                                     </div>
                                   </div>`;
