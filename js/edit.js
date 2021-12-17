@@ -1,6 +1,7 @@
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./components/createMenu.js";
+import displayMessage from "./components/displayMessages.js";
 import deleteButton from "./components/articles/deleteButton.js";
 
 createMenu();

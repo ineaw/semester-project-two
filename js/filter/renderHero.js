@@ -10,15 +10,15 @@ export function renderHero() {
       const response = await fetch(homeUrl);
       const json = await response.json();
 
-      const items = json;
-      console.log(items);
+      const home = json;
+      console.log(home);
 
       hero.innerHTML = "";
 
       hero.innerHTML = `
         <div class="hero__banner">
         <a href="products.html">
-        <figure class="hero__image" style="background-image: url(${items.hero.url})" />
+        <figure class="hero__image" style="background-image: url(${home.hero.url})" />
         <div class="hero__header">
         <h1 class="hero__title">Every product has a story</h1>
         <a href="products.html"><button class="btn__cta">Explore products</button></a>

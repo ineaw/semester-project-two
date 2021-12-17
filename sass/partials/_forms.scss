@@ -32,14 +32,24 @@ form > div {
   margin-bottom: 1rem;
 }
 
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .search {
   &__input {
     padding: 0.5rem;
     height: 2.5em;
-    width: 150px;
+    width: 200px;
     border: 2px solid black;
   }
 }
 
+.sign-up {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
 @media (min-width: 850px) {
 }

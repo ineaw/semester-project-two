@@ -112,9 +112,12 @@
   &__info {
     font-size: $ff-base;
     padding-inline: 0.1em;
-    font-weight: 200;
-    font-family: $ff-accent;
+    font-family: $ff-text;
   }
+}
+
+.fav-container {
+  text-align: center;
 }
 
 .new-products {

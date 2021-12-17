@@ -6,12 +6,14 @@ export function renderFeatured(item) {
 
   for (let i = 0; i < item.length; i++) {
     const feat = item[i].featured ? "block" : "none";
+    // const featuredContainer = products.filter((product) => product.featured === true);
+    console.log(feat);
 
     featuredContainer.innerHTML += `
           <div id="product" class="featured" style="display: ${feat}">
           <figure class="featured__figure">
           <a href="product.html?id=${item[i].id}">
-          <img class="product__image" src="${item[i].image.url}"  alt="${item[i].title}"/>
+          <img class="product__image" src="${item[i].image_url}"  alt="${item[i].title}"/>
           </a>
           </figure>
           <div class="product__info">
@@ -36,7 +38,7 @@ export function renderGallery(news) {
           <div class="news">
           <figure class="news__figure">
           <a href="product.html?id=${news[i].id}">
-          <img class="news__image" src="${news[i].image.url}"  alt="${news[i].title}"/>
+          <img class="news__image" src="${news[i].image_url}"  alt="${news[i].title}"/>
           </a>
           </figure>
           </div>

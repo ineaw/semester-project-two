@@ -1,9 +1,9 @@
-export default function getExistingItems(items) {
-  const favs = localStorage.getItem("shopping");
-  console.log(favs);
-  if (favs === null) {
+export default function getExistingItems() {
+  const cartItems = localStorage.getItem("shopping");
+  console.log(cartItems);
+  if (cartItems === null) {
     return [];
   } else {
-    return JSON.parse(favs);
+    return JSON.parse(cartItems);
   }
 }

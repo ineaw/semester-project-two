@@ -1,9 +1,8 @@
 .logo {
-  margin-left: 2rem;
-  top: 4rem;
+  //   top: 4rem;
   width: 100px;
+  // }
 }
-
 .nav {
   padding: 2em;
   width: 100%;
@@ -18,6 +17,8 @@
   &__links {
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     // justify-content: space-between;
     // align-items: center;
     margin: 0 auto;
@@ -33,11 +34,11 @@
   &__icons {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
   }
 
   &__icons i {
-    margin-top: 2.8rem;
+    // margin-top: 2.8rem;
     margin-right: 0.4rem;
     font-size: 1.2rem;
   }
@@ -109,38 +110,38 @@
 
 @media (min-width: 678px) {
   .nav {
-    &__content {
-      position: initial;
-      flex-direction: row;
-      background-color: transparent;
-    }
+    //   &__content {
+    //     position: initial;
+    //     flex-direction: row;
+    //     background-color: transparent;
+    //   }
 
-    &__links {
-      flex-direction: row;
-      margin-top: 0em;
-      display: inline-block;
-    }
+    // &__links {
+    //   flex-direction: row;
+    //   margin-top: 0em;
+    //   display: inline-block;
+    // }
 
     &__link {
       font-size: $fs-nav;
     }
 
-    &__menu {
-      flex-direction: row;
-      margin-top: 0;
-    }
+    // &__menu {
+    //   flex-direction: row;
+    //   margin-top: 0;
+    // }
 
-    &__icons i {
-      margin-top: 1.5rem;
-      margin-right: 0.5rem;
-      font-size: 1.2rem;
-    }
+    // &__icons i {
+    //   margin-top: 1.5rem;
+    //   margin-right: 0.5rem;
+    //   font-size: 1.2rem;
+    // }
   }
 
-  .nav--open,
-  .nav--close {
-    display: none;
-  }
+  // .nav--open,
+  // .nav--close {
+  //   display: none;
+  // }
 }
 
 .breadcrumbs {

@@ -47,7 +47,6 @@
   padding: 0 1em;
   position: relative;
   text-align: center;
-  text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -128,6 +127,39 @@
 //   margin-left: 0px;
 // }
 
+#close-button {
+  font-size: 2rem;
+  padding: 2rem;
+  background: transparent;
+  border: none;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+#clear-cart {
+  align-items: center;
+  background-color: $accent;
+  border: 2px solid #111;
+  cursor: pointer;
+  height: 2.5em;
+  line-height: 1;
+  max-width: 150px;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.image-uploadBtn {
+  align-items: center;
+  background-color: $accent;
+  border: 2px solid #111;
+  cursor: pointer;
+  height: 2.5em;
+  line-height: 1;
+  max-width: 150px;
+  padding: 1em;
+  text-align: center;
+}
 @media (min-width: 768px) {
   .filters {
     display: flex;

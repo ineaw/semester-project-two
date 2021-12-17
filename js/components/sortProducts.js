@@ -1,4 +1,4 @@
-import { renderProducts } from "./renderProducts.js";
+import { renderProducts } from "../filter/renderProducts.js";
 
 export default function sortProducts(products) {
   const sortLow = document.querySelector(".sort-low");

@@ -19,14 +19,14 @@ body > footer {
 
   &__image {
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    height: 90vh;
+    height: 40vh;
     position: relative;
   }
 
   &__title {
-    font-size: 5rem;
+    font-size: 2rem;
     color: $accent;
     z-index: 1;
     max-width: 90vw;

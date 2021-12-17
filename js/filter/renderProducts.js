@@ -1,5 +1,5 @@
 import { getExistingFavs } from "../components/favFunctions.js";
-import sortProducts from "./sortProducts.js";
+import sortProducts from "../components/sortProducts.js";
 import { toggleFavs } from "../components/toggleFavourites.js";
 import { favExist } from "./doesFavExist.js";
 
@@ -18,9 +18,9 @@ export function renderProducts(products) {
 
     productContainer.innerHTML += `<div class="product flex-card">
                                     <figure class="product__figure">
-                                    <i class="${favIcon} fa-heart" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image.url}"></i>
+                                    <i class="${favIcon} fa-heart" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image_url}"></i>
                                     <a href="product.html?id=${product.id}">
-                                    <img class="product__image" src="${product.image.url}" alt="${product.title}">
+                                    <img class="product__image" src="${product.image_url}" alt="${product.title}">
                                     </a>
                                     </figure>
                                     <div class="product__info">

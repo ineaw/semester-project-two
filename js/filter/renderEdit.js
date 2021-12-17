@@ -17,7 +17,7 @@ export function renderEdit() {
         <div id="edit" class="edit flex-card">
         <a href="edit.html?id=${products[i].id}">
         <figure class="edit__figure">
-        <img class="edit__thumb" src="${products[i].image.url}"/>
+        <img class="edit__thumb" src="${products[i].image_url}"/>
         </figure>
         <h4 class="edit__title">${products[i].title}</h4>
         <button class="cta">Edit product</button>

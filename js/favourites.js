@@ -14,7 +14,7 @@ const clearFavBtn = document.querySelector("#clear-favs--btn");
 favContainer.innerHTML = "";
 
 if (favourites.length === 0) {
-  favContainer.innerHTML = "Your wishlist is empty😔";
+  favContainer.innerHTML = `<h3 class="fav-empty">Your wishlist is empty😔</h2>`;
   clearFavBtn.style.display = "none";
 }
 

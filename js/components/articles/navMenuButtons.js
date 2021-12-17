@@ -15,16 +15,18 @@ export function navMenuButtons() {
     nav.classList.remove("navigation--open");
   });
 
+  /* close cart */
+
   function closeCart() {
     const cart = document.querySelector(".products-in-cart");
-    cart.classList.toggle("hide");
+    cart.classList.toggle("hidden");
     document.querySelector("body").classList.toggle("stop-scrolling");
   }
 
-  const openShopCart = document.querySelector(".shopping-cart-button");
+  const openShopCart = document.querySelector(".shopping-cart__btn");
   openShopCart.addEventListener("click", () => {
     const cart = document.querySelector(".products-in-cart");
-    cart.classList.toggle("hide");
+    cart.classList.toggle("hidden");
     document.querySelector("body").classList.toggle("stop-scrolling");
   });
 

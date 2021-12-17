@@ -1,6 +1,6 @@
 export default function clearCartButton() {
   const clearCartBtn = document.querySelector("#clear-cart");
-  const clearCart = document.querySelector("#buyItems");
+  const clearCart = document.querySelector("#buy-items");
   const clearFas = document.querySelector("#sum-prices");
   const clearFa = document.querySelector("#sum-items");
 
@@ -8,11 +8,11 @@ export default function clearCartButton() {
 
   function clearProd() {
     if (confirm("Are you sure you want to clear all items from cart?")) {
-      localStorage.removeItem("shoppingcart");
-      clearCart.innerHTML = "";
+      localStorage.removeItem("cart");
+      clearCart.innerHTML = "Your wishlist is empty😔";
       clearFas.innerHTML = "";
       clearFa.innerHTML = "";
-      clearCartBtn.style.display = "hidden";
+      clearCartBtn.style.display = "none";
     }
   }
 }

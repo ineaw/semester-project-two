@@ -1,8 +1,10 @@
 // import { renderProducts } from "./filter/renderProducts.js";
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./components/createMenu.js";
-import getExistingItems from "./components/cartFunctions.js";
 import clearCartButton from "./components/articles/clearCartButton.js";
+import { addToCart } from "./filter/addToCart.js";
+import { getCartItems } from "./components/getCartItems.js";
+import { countItems, countSum } from "./components/countItems.js";
 
 createMenu();
 clearCartButton();
@@ -23,7 +25,6 @@ if (!id) {
 const detailUrl = baseUrl + "products/" + id;
 const detailContainer = document.querySelector(".details");
 detailContainer.innerHTML = "";
-const shopping = getExistingItems();
 
 (async function () {
   try {
@@ -36,7 +37,7 @@ const shopping = getExistingItems();
     detailContainer.innerHTML = `       
         <div class="detail"> 
         <figure class="detail__figure">
-        <img class="detail__image" src="${item.image.url}" alt="${item.title}">
+        <img class="detail__image" src="${item.image_url}" alt="${item.title}">
         </figure>
         <div class="detail__info">
         <h2 class="detail__title">${item.title}</h2>
@@ -53,34 +54,18 @@ const shopping = getExistingItems();
       <li><p>${item.title}</p></li>
       `;
 
-    let productsInCart = JSON.parse(localStorage.getItem("shoppingcart"));
-
-    if (!productsInCart) {
-      productsInCart = [];
-    }
+    let productsInCart = getCartItems();
     const parentElement = document.querySelector("#buy-items");
     const cartSumPrice = document.querySelector("#sum-prices");
     const products = document.querySelectorAll(".detail");
     const cartNumbers = document.querySelector("#sum-items");
 
-    const countTheSumPrice = function () {
-      let sum = 0;
-      productsInCart.forEach((item) => {
-        sum += item.price;
-      });
-      return sum;
-    };
+    const countTheSumPrice = countSum(productsInCart);
 
-    const countTheItems = function () {
-      let num = 0;
-      productsInCart.forEach((item) => {
-        num += item.count;
-      });
-      return num;
-    };
+    const countTheItems = countItems(productsInCart);
 
-    const updateShoppingCartHTML = function () {
-      localStorage.setItem("shoppingcart", JSON.stringify(productsInCart));
+    const updateShoppingCartHTML = () => {
+      localStorage.setItem("cart", JSON.stringify(productsInCart));
       if (productsInCart.length > 0) {
         let result = productsInCart.map((product) => {
           return `
@@ -90,22 +75,19 @@ const shopping = getExistingItems();
           </a>
           <div>
           <h5>${product.title}</h5>
-          <h6>${product.price}</h6>
+          <h6><span class="cart__count">${product.count} x </span>${product.price}</h6>
           <div>
-          <button class="in-cart__minus" data-id=${product.id}>-</button>
-          <span class="in-cart__count">${product.count}</span>
-          <button class="in-cart__plus" data-id=${product.id}>+</button>
           </div>
           </li>`;
         });
 
         parentElement.innerHTML = result.join("");
         document.querySelector(".checkout").classList.remove("hidden");
-        cartSumPrice.innerHTML = "NOK" + countTheSumPrice();
+        cartSumPrice.innerHTML = `NOK ${countTheSumPrice()}`;
         cartNumbers.innerHTML = countTheItems();
       } else {
         document.querySelector(".checkout").classList.add("hidden");
-        parentElement.innerHTML = '<h4 class="cart__text--empty">Your shopping cart is currentlyempty</h4>';
+        parentElement.innerHTML = '<h4 class="cart__text--empty">Your cart is empty, <span><a href="products.html">fill up now</a></span></h4>';
         cartSumPrice.innerHTML = "";
         cartNumbers.innerHTML = "";
       }
@@ -113,7 +95,7 @@ const shopping = getExistingItems();
 
     function updateProductsInCart(product) {
       for (let i = 0; i < productsInCart.length; i++) {
-        if (productsInCart[i].id == product.id) {
+        if (productsInCart[i].id === product.id) {
           productsInCart[i].count += 1;
           productsInCart[i].price = productsInCart[i].basePrice * productsInCart[i].count;
           return;
@@ -121,61 +103,29 @@ const shopping = getExistingItems();
       }
       productsInCart.push(product);
     }
+    addToCart(products, updateProductsInCart, updateShoppingCartHTML);
 
-    // newCartArray = Object.keys(json);
-    // console.log(newCartArray);
-    // const keys = Object.values(products);
-    //  console.log(products);
-
-    // keys.forEach((key, index) => {
-    //   console.log(key, index);
-
-    // key.addEventListener("click", function (e) {
-
-    products.forEach((item) => {
-      console.log(item);
-      item.addEventListener("click", (e) => {
-        if (e.target.classList.contains("add-to-cart")) {
-          const productID = e.target.dataset.productId;
-          const productName = item.querySelector(".detail__title").innerHTML;
-          const productPrice = item.querySelector(".price").innerHTML;
-          const productImage = item.querySelector("img").src;
-
-          let product = {
-            title: productName,
-            image: productImage,
-            id: productID,
-            count: 1,
-            price: +productPrice,
-            basePrice: +productPrice,
-          };
-          updateProductsInCart(product);
-          updateShoppingCartHTML();
-        }
-      });
-    });
-
-    parentElement.addEventListener("click", (e) => {
-      const isPlusButton = e.target.classList.contains("in-cart__plus");
-      const isMinusButton = e.target.classList.contains("in-cart__minus");
-      if (isPlusButton || isMinusButton) {
-        for (let i = 0; i < productsInCart.length; i++) {
-          if (productsInCart[i].id == e.target.dataset.id);
-          {
-            if (isPlusButton) {
-              productsInCart[i].count += 1;
-            } else if (isMinusButton) {
-              productsInCart[i].count -= 1;
-            }
-            productsInCart[i].price = productsInCart[i].basePrice * productsInCart[i].count;
-          }
-          if (productsInCart[i].count <= 0) {
-            productsInCart.splice(i, 1);
-          }
-        }
-        updateShoppingCartHTML();
-      }
-    });
+    // parentElement.addEventListener("click", (e) => {
+    //   const isPlusButton = e.target.classList.contains("in-cart__plus");
+    //   const isMinusButton = e.target.classList.contains("in-cart__minus");
+    //   if (isPlusButton || isMinusButton) {
+    //     for (let i = 0; i < productsInCart.length; i++) {
+    //       if (productsInCart[i].id == e.target.dataset.id);
+    //       {
+    //         if (isPlusButton) {
+    //           productsInCart[i].count += 1;
+    //         } else if (isMinusButton) {
+    //           productsInCart[i].count -= 1;
+    //         }
+    //         productsInCart[i].price = productsInCart[i].basePrice * productsInCart[i].count;
+    //       }
+    //       if (productsInCart[i].count <= 0) {
+    //         productsInCart.splice(i, 1);
+    //       }
+    //     }
+    //     updateShoppingCartHTML();
+    //   }
+    // });
     updateShoppingCartHTML();
   } catch (error) {
     console.log(error);
