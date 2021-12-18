@@ -781,6 +781,10 @@ h2 {
       touch-action: manipulation;
 }
 
+.btn-accent a {
+  color: #333;
+}
+
 .btn-accent:after {
   background-color: #111;
   content: "";
@@ -1037,6 +1041,7 @@ footer {
   width: 100vw;
   height: 100vh;
   padding: 1rem;
+  margin-bottom: 5rem;
 }
 
 .products-in-cart--btn {

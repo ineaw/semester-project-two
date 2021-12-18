@@ -26,6 +26,10 @@
   touch-action: manipulation;
 }
 
+.btn-accent a {
+  color: $dark;
+}
+
 .btn-accent:after {
   background-color: #111;
   content: "";
