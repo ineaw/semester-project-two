@@ -11,6 +11,7 @@ Header navigation
   align-items: center;
   height: 100px;
   background-color: $accent;
+
   &__links {
     display: flex;
     flex-direction: column;
@@ -21,7 +22,7 @@ Header navigation
 
   &__link {
     position: relative;
-    padding: 0 0.3em;
+    // padding: 0 0.1em;
   }
 
   &__left,
@@ -32,7 +33,7 @@ Header navigation
   }
 
   &__icons i {
-    margin-right: 0.4rem;
+    margin-left: 0.4rem;
     font-size: 1.2rem;
     color: $main;
   }
@@ -66,7 +67,7 @@ Header navigation
   }
 
   &--close {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem;
     position: absolute;
   }
@@ -100,6 +101,10 @@ Header navigation
 
 .navigation--open {
   transform: translateX(100%);
+}
+
+.fa-shopping-cart {
+  margin: 0;
 }
 
 /* breadcrumbs */
