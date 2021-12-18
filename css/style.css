@@ -81,6 +81,10 @@ body > footer {
   top: 100vh;
 }
 
+.logo {
+  width: 150px;
+}
+
 .hero {
   width: 100vw;
   display: -webkit-box;
@@ -150,6 +154,13 @@ body > footer {
     z-index: 1;
     max-width: 45vw;
     line-height: 1.2;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 250px;
+    margin-left: 2rem;
   }
 }
 
@@ -475,7 +486,7 @@ body > footer {
 }
 
 .logo {
-  width: 150px;
+  width: 250px;
 }
 
 /* ======

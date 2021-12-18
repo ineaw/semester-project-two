@@ -3,6 +3,10 @@ body > footer {
   top: 100vh;
 }
 
+.logo {
+  width: 150px;
+}
+
 .hero {
   width: 100vw;
   display: flex;
@@ -56,5 +60,9 @@ body > footer {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
+  .logo {
+    width: 250px;
+    margin-left: 2rem;
+  }
 }
