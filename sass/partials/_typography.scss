@@ -1,11 +1,11 @@
 body {
   font-family: $ff-text;
-  color: $text;
+  color: $main;
 }
 
 a {
   font-family: $ff-text;
-  color: black;
+  color: $main;
 }
 
 .section {
@@ -22,13 +22,13 @@ a {
 }
 
 h1 {
-  color: $dark;
+  color: $main;
   font-family: $ff-base;
   font-size: $fs-h1;
 }
 
 h2 {
-  color: $dark;
+  color: $main;
   font-family: $ff-base;
   font-size: $fs-h2;
 }

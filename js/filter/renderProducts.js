@@ -2,10 +2,14 @@ import { getExistingFavs } from "../components/favFunctions.js";
 import sortProducts from "../components/sortProducts.js";
 import { toggleFavs } from "../components/toggleFavourites.js";
 import { favExist } from "./doesFavExist.js";
+import { getCartItems } from "../components/getCartItems.js";
 
+const inCart = getCartItems();
+console.log(inCart);
 export function renderProducts(products) {
   const productContainer = document.querySelector(".all-products");
   productContainer.innerHTML = "";
+
   console.log(products);
 
   let getFavs = getExistingFavs();

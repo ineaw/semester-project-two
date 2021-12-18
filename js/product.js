@@ -36,7 +36,7 @@ detailContainer.innerHTML = "";
 
     console.log(json);
     changeTitle.innerHTML = `${item.title} | Moon Rising`;
-    detailContainer.innerHTML = `       
+    detailContainer.innerHTML += `       
         <div class="detail"> 
         <figure class="detail__figure">
         <img class="detail__image" src="${item.image_url}" alt="${item.title}">
@@ -53,11 +53,12 @@ detailContainer.innerHTML = "";
     breadcrumbs.innerHTML += `   
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
-      <li><p>${item.title}</p></li>
+      <li><a>${item.title}</a></li>
       `;
 
     let productsInCart = getCartItems();
     const parentElement = document.querySelector("#buy-items");
+
     const cartSumPrice = document.querySelector("#sum-prices");
     const products = document.querySelectorAll(".detail");
     const cartNumbers = document.querySelector("#sum-items");
@@ -77,6 +78,11 @@ detailContainer.innerHTML = "";
           </a>
           <div>
           <h5>${product.title}</h5>
+          <div>
+          <button class="cart__minus" data-product-id="${product.id}">-</button>
+          <span class="cart__count">${product.count}</span>
+          <button class="cart__plus" data-product-id="${product.id}">+</button>
+          </div>
           <h6><span class="cart__count">${product.count} x </span>${product.price}</h6>
           <div>
           </div>
@@ -106,28 +112,6 @@ detailContainer.innerHTML = "";
       productsInCart.push(product);
     }
     addToCart(products, updateProductsInCart, updateShoppingCartHTML);
-
-    // parentElement.addEventListener("click", (e) => {
-    //   const isPlusButton = e.target.classList.contains("in-cart__plus");
-    //   const isMinusButton = e.target.classList.contains("in-cart__minus");
-    //   if (isPlusButton || isMinusButton) {
-    //     for (let i = 0; i < productsInCart.length; i++) {
-    //       if (productsInCart[i].id == e.target.dataset.id);
-    //       {
-    //         if (isPlusButton) {
-    //           productsInCart[i].count += 1;
-    //         } else if (isMinusButton) {
-    //           productsInCart[i].count -= 1;
-    //         }
-    //         productsInCart[i].price = productsInCart[i].basePrice * productsInCart[i].count;
-    //       }
-    //       if (productsInCart[i].count <= 0) {
-    //         productsInCart.splice(i, 1);
-    //       }
-    //     }
-    //     updateShoppingCartHTML();
-    //   }
-    // });
 
     updateShoppingCartHTML();
   } catch (error) {

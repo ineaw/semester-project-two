@@ -17,4 +17,3 @@ export function countSum(productsInCart) {
     return sum;
   };
 }
-[];

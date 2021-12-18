@@ -154,9 +154,15 @@
   }
 }
 
+.edit-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
 .edit {
   &__thumb {
-    width: 10rem;
+    width: 9rem;
     height: 10rem;
     object-fit: cover;
     &__thumb img {
@@ -238,6 +244,19 @@
 
   .new-products {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .edit-products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .edit {
+    &__thumb {
+      width: 12rem;
+      height: 14rem;
+    }
   }
 
   .favourite,

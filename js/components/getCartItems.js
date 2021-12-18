@@ -1,8 +1,3 @@
-export function getCartItems() {
-  let productsInCart = JSON.parse(localStorage.getItem("cart"));
-
-  if (!productsInCart) {
-    productsInCart = [];
-  }
-  return productsInCart;
-}
+export const getCartItems = () => {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+};

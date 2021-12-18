@@ -5,6 +5,7 @@ import { navMenuButtons } from "./articles/navMenuButtons.js";
 // import clearCartButton from "./articles/clearCartButton.js";
 
 // renderCart();
+import { getCartItems } from "../components/getCartItems.js";
 
 export default function createMenu() {
   const { pathname } = document.location;
@@ -14,12 +15,14 @@ export default function createMenu() {
   // const menuSearch = document.querySelector(".nav__search");
 
   const username = getUserName();
+  const inCart = getCartItems();
+  console.log(inCart);
 
-  let authLink = `<div class="nav__icon"><a href="admin.html" class="${pathname === "/admin.html" ? "active" : ""}"><i class="fas fa-user"></i></a></div>`;
+  let authLink = `<div class="nav__icon"><a href="account.html" class="${pathname === "/account.html" ? "active" : ""}"><i class="fas fa-user"></i></a></div>`;
 
   if (username) {
     authLink = `
-                <li class="nav__icon"><a href="add.html" class="${pathname === "/add.html" ? "active" : ""}"><i class="far fa-user"></i></a></li>
+                <li class="nav__icon"><a href="admin.html" class="${pathname === "/admin.html" ? "active" : ""}"><i class="far fa-user"></i></a></li>
      `;
   }
 
@@ -39,12 +42,11 @@ export default function createMenu() {
   <div class="overlay"></div>
   <div class="products-in-cart__header">
   <button id="close-button" class="products-in-cart__btn">
-  <i class="fas fa-times"></i>
+  <i class="fas fa-times"></i> Close
   </button>
   <h2 class="cart__header">Cart</h2>
   </div>
   <ul id="buy-items">
-  <h4 class="cart-message">Your cart is empty</h4>
   </ul>
   <h4 id="sum-prices"></h4>
   <div class="cart-buttons">
@@ -54,6 +56,12 @@ export default function createMenu() {
   </li>
   <li class="nav-icon"><h6 id="sum-items"></h6></li>
   `;
+
+  inCart.innerHTML = `<i class="fas fa-shopping-cart shopping-cart__btn"></i>
+  <li class="nav-icon"><h6 id="sum-items">0</h6></li>
+
+  `;
+
   logoutButton();
   //   clearCartButton();
   navMenuButtons();

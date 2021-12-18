@@ -49,6 +49,21 @@
   background-color: #ffdeda;
 }
 
+.btn--delete {
+  align-items: center;
+  background-color: $main;
+  border: 2px solid #111;
+  cursor: pointer;
+  display: flex;
+  height: 2.5em;
+  line-height: 1;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1em;
+  position: relative;
+  text-align: center;
+}
+
 .btn__cta--main:hover {
   background-color: #ffdeda;
 }

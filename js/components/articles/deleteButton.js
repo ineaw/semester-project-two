@@ -1,12 +1,13 @@
 import { baseUrl } from "../../settings/api.js";
 import { getToken } from "../../utils/storage.js";
 import displayMessage from "../displayMessages.js";
+
 export default function deleteButton(id) {
   const container = document.querySelector(".delete-container");
 
-  container.innerHTML = `<button type="button" class="delete">Delete</button>`;
+  container.innerHTML = `<button type="button" class="btn--delete">Delete</button>`;
 
-  const button = document.querySelector("button.delete");
+  const button = document.querySelector(".btn--delete");
 
   button.onclick = async function () {
     console.log(id);
