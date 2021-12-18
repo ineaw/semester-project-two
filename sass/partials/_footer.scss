@@ -5,7 +5,7 @@ footer {
   align-items: center;
   background: $accent;
   padding: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .footer {
@@ -14,6 +14,7 @@ footer {
   align-items: center;
   gap: 0.5rem;
 
+  &__social,
   &__main {
     display: flex;
     flex-direction: row;
@@ -21,24 +22,6 @@ footer {
     gap: 0.5rem;
     padding: 0;
   }
-}
-
-.footer__link::before {
-  content: "";
-  position: absolute;
-  visibility: hidden;
-  width: 10rem;
-  height: 3px;
-  bottom: -2px;
-  left: 0;
-  transform: scaleX(0);
-  transition: all 0.4s ease-in-out;
-  background: $main;
-}
-
-.footer__link:hover::before {
-  visibility: visible;
-  transform: scaleX(1);
 }
 
 .copyright {

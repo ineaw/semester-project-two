@@ -1,8 +1,3 @@
-.logo {
-  width: 250px;
-  // margin-left: 3rem;
-}
-
 /* ======
 Header navigation
   ====== */
@@ -39,6 +34,7 @@ Header navigation
   &__icons i {
     margin-right: 0.4rem;
     font-size: 1.2rem;
+    color: $main;
   }
 
   &__content {
@@ -109,8 +105,8 @@ Header navigation
 /* breadcrumbs */
 
 .breadcrumbs {
-  margin: 1rem 0;
   font-family: $ff-text;
+  left: 0;
 }
 
 .breadcrumbs li {

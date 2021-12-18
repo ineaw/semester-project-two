@@ -30,7 +30,7 @@ body > footer {
   }
 
   &__title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: $accent;
     z-index: 1;
     max-width: 90vw;
@@ -52,9 +52,9 @@ body > footer {
     }
 
     &__title {
-      font-size: 5rem;
+      font-size: 4.5rem;
       z-index: 1;
-      max-width: 45vw;
+      max-width: 60vw;
       line-height: 1.2;
     }
   }
