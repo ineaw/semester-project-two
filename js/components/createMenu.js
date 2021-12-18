@@ -1,10 +1,7 @@
 import { getUserName } from "../utils/storage.js";
-// import { renderCart } from "../filter/cart.js";
 import logoutButton from "./articles/logoutButton.js";
 import { navMenuButtons } from "./articles/navMenuButtons.js";
-// import clearCartButton from "./articles/clearCartButton.js";
 
-// renderCart();
 import { getCartItems } from "../components/getCartItems.js";
 
 export default function createMenu() {
@@ -12,11 +9,8 @@ export default function createMenu() {
 
   const menuContainer = document.querySelector(".nav__menu");
   const menuIcons = document.querySelector(".nav__icons");
-  // const menuSearch = document.querySelector(".nav__search");
 
   const username = getUserName();
-  const inCart = getCartItems();
-  console.log(inCart);
 
   let authLink = `<div class="nav__icon"><a href="account.html" class="${pathname === "/account.html" ? "active" : ""}"><i class="fas fa-user"></i></a></div>`;
 
@@ -36,13 +30,13 @@ export default function createMenu() {
   ${authLink}
   <li class="nav__icon"><a href="/favourites.html"><i class="far fa-heart"></i></a></li>
   <li class="nav__icon">
-  <li class="shopping-cart">
+  <li class="nav__icon shopping-cart">
   <i class="fas fa-shopping-cart shopping-cart__btn"></i>
   <div class="products-in-cart hidden">
   <div class="overlay"></div>
   <div class="products-in-cart__header">
   <button id="close-button" class="products-in-cart__btn">
-  <i class="fas fa-times"></i> Close
+  <i class="fas fa-times"></i>
   </button>
   <h2 class="cart__header">Cart</h2>
   </div>
@@ -57,12 +51,6 @@ export default function createMenu() {
   <li class="nav-icon"><h6 id="sum-items"></h6></li>
   `;
 
-  inCart.innerHTML = `<i class="fas fa-shopping-cart shopping-cart__btn"></i>
-  <li class="nav-icon"><h6 id="sum-items">0</h6></li>
-
-  `;
-
   logoutButton();
-  //   clearCartButton();
   navMenuButtons();
 }

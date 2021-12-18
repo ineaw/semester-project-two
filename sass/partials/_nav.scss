@@ -2,8 +2,13 @@
   width: 150px;
   // margin-left: 3rem;
 }
+
+/* ======
+Header navigation
+  ====== */
+
 .nav {
-  padding: 2em;
+  padding: 1em;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -75,13 +80,13 @@
   content: "";
   position: absolute;
   visibility: hidden;
-  width: 100%;
+  width: 10rem;
   height: 3px;
   bottom: -2px;
   left: 0;
   transform: scaleX(0);
   transition: all 0.4s ease-in-out;
-  background: $dark;
+  background: $main;
 }
 
 .nav__link:hover::before {
@@ -94,12 +99,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: $sub;
+  color: $main;
 }
 
 .navigation--open {
   transform: translateX(100%);
 }
+
+/* breadcrumbs */
 
 .breadcrumbs {
   margin: 1rem 0;
@@ -135,5 +142,5 @@
   display: inline-block;
 }
 
-@media (min-width: 678px) {
+@media (min-width: 768px) {
 }
