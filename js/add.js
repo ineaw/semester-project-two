@@ -34,7 +34,7 @@ function submitForm(event) {
       uploadPreset: uploadPreset,
     },
     (error, result) => {
-      if (!error && result && result.event === "message--success") {
+      if (!error && result && result.event === "success") {
         console.log("Done! Here is the image info: ", result.info);
         image.value = `${result.info.url}`;
       }
@@ -49,7 +49,7 @@ function submitForm(event) {
   );
 
   if (titleValue.length === 0 || priceValue.length === 0 || descriptionValue.length === 0 || imageValue.length === 0) {
-    return displayMessage("message--warning", "please supply proper values", ".message-container");
+    return displayMessage("warning", "please supply proper values", ".message-container");
   }
 
   addProduct(titleValue, priceValue, descriptionValue, imageValue);
