@@ -22,7 +22,7 @@ const productsUrl = `${baseUrl}products`;
     renderProducts(products);
 
     let productsInCart = getCartItems();
-    const parentElement = document.querySelector("#buy-items");
+    const cartContent = document.querySelector("#cart__items");
     const cartSumPrice = document.querySelector("#sum-prices");
     // const prod = document.querySelectorAll(".detail");
     const cartNumbers = document.querySelector("#sum-items");
@@ -31,7 +31,7 @@ const productsUrl = `${baseUrl}products`;
 
     const countTheItems = countItems(productsInCart);
 
-    const updateShoppingCartHTML = updateCart(productsInCart, parentElement, cartSumPrice, countTheSumPrice, cartNumbers, countTheItems);
+    const updateShoppingCartHTML = updateCart(productsInCart, cartContent, cartSumPrice, countTheSumPrice, cartNumbers, countTheItems);
     updateShoppingCartHTML();
   } catch (error) {
     console.log(error);

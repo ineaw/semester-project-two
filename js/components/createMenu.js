@@ -43,16 +43,15 @@ export default function createMenu() {
   <li class="nav__icon">
   <li class="nav__icon shopping-cart">
   <i class="fas fa-shopping-cart shopping-cart__btn"></i>
-  <div class="products-in-cart hidden">
+  <div class="cart hidden">
   <div class="overlay"></div>
-  <div class="products-in-cart__header">
-  <h2 class="cart__header">Cart</h2>
+  <div class="cart__header">
+  <h2 class="cart__header--title">Cart</h2>
   <button id="close-cart" class="products-in-cart__btn">
   <i class="fas fa-times"></i>
-  Close
   </button>
   </div>
-  <ul id="buy-items">
+  <ul id="cart__items">
   </ul>
   <h4 id="sum-prices"></h4>
   <div class="cart-buttons">

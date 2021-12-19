@@ -57,8 +57,7 @@ detailContainer.innerHTML = "";
       `;
 
     let productsInCart = getCartItems();
-    const parentElement = document.querySelector("#buy-items");
-
+    const cartContent = document.querySelector("#cart__items");
     const cartSumPrice = document.querySelector("#sum-prices");
     const products = document.querySelectorAll(".detail");
     const cartNumbers = document.querySelector("#sum-items");
@@ -72,7 +71,7 @@ detailContainer.innerHTML = "";
       if (productsInCart.length > 0) {
         let result = productsInCart.map((product) => {
           return `
-          <li class="products-in-cart__buy-item">
+          <li class="cart__item">
           <a href="product.html?id=${product.id}">
           <img src="${product.image}">
           </a>
@@ -89,13 +88,13 @@ detailContainer.innerHTML = "";
           </li>`;
         });
 
-        parentElement.innerHTML = result.join("");
+        cartContent.innerHTML = result.join("");
         document.querySelector(".checkout").classList.remove("hidden");
         cartSumPrice.innerHTML = `NOK ${countTheSumPrice()}`;
         cartNumbers.innerHTML = countTheItems();
       } else {
         document.querySelector(".checkout").classList.add("hidden");
-        parentElement.innerHTML = '<h4 class="cart__text--empty">Your cart is empty, <span><a href="products.html">fill up now</a></span></h4>';
+        cartContent.innerHTML = '<h4 class="cart__text--empty">Your cart is empty, <span><a href="products.html">fill up now</a></span></h4>';
         cartSumPrice.innerHTML = "";
         cartNumbers.innerHTML = "";
       }

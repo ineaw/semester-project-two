@@ -18,14 +18,14 @@ export function navMenuButtons() {
   /* close cart */
 
   function closeCart() {
-    const cart = document.querySelector(".products-in-cart");
+    const cart = document.querySelector(".cart");
     cart.classList.toggle("hidden");
     document.querySelector("body").classList.toggle("stop-scrolling");
   }
 
   const openShopCart = document.querySelector(".shopping-cart__btn");
   openShopCart.addEventListener("click", () => {
-    const cart = document.querySelector(".products-in-cart");
+    const cart = document.querySelector(".cart");
     cart.classList.toggle("hidden");
     document.querySelector("body").classList.toggle("stop-scrolling");
   });

@@ -1,6 +1,6 @@
 export default function clearCartButton() {
   const clearCartBtn = document.querySelector("#clear-cart");
-  const clearCart = document.querySelector("#buy-items");
+  const clearCart = document.querySelector("#cart__items");
   const clearFas = document.querySelector("#sum-prices");
   const clearFa = document.querySelector("#sum-items");
 
