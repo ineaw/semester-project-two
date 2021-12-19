@@ -715,17 +715,6 @@ form textarea {
   border: 2px solid #333;
 }
 
-.image-upload__btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 1rem;
-}
-
 .sign-up {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -738,6 +727,13 @@ form textarea {
 
 .login {
   margin-top: 1rem;
+}
+
+.form-submit button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0;
 }
 
 @media (min-width: 768px) {
@@ -821,8 +817,7 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
-  padding: 0 1em;
+  padding: 0.5em 1em;
   position: relative;
   text-align: center;
   -moz-user-select: none;
@@ -961,8 +956,16 @@ h2 {
   max-width: 350px;
   padding: 0.6em 1em;
   text-align: center;
+  font-size: 1rem;
 }
 
+.go-to__btn {
+  margin: 1rem;
+  background-color: #fbddf0;
+  padding: 0.6em 1em;
+}
+
+.go-to__btn:hover,
 #clear-cart:hover,
 .checkout:hover,
 .btn--primary:hover {

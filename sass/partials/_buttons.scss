@@ -28,8 +28,7 @@
   height: 2.5em;
   line-height: 1;
   justify-content: center;
-  width: 100%;
-  padding: 0 1em;
+  padding: 0.5em 1em;
   position: relative;
   text-align: center;
   user-select: none;
@@ -135,8 +134,16 @@
   max-width: 350px;
   padding: 0.6em 1em;
   text-align: center;
+  font-size: $fs-base;
 }
 
+.go-to__btn {
+  margin: 1rem;
+  background-color: $accent;
+  padding: 0.6em 1em;
+}
+
+.go-to__btn:hover,
 #clear-cart:hover,
 .checkout:hover,
 .btn--primary:hover {

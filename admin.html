@@ -36,26 +36,26 @@
       <main class="flex">
         <h1 class="main--header">Admin</h1>
         <div>
-        <a href="#add">Add new product</a>
-        <a href="#edit">Edit existing product</a>
+        <a href="#add" type="button" class="go-to__btn">Add new product</a>
+        <a href="#edit" type="button" class="go-to__btn">Edit existing product</a>
         </div>
       <section class="admin flex">
         <h2>Add product</h2>
       <div class="form__container">
         <form id="add" class="form__add">
           <div>
-            <label for="title" class="form-item__label">Title *Required</label>
+            <label for="title" class="form-item__label">Title</label>
             <input id="title" />
           </div>
           <div>
-            <label for="price" class="form-item__label">Price *Required</label>
+            <label for="price" class="form-item__label">Price</label>
             <input id="price" />
           </div>
           <div>
             <label for="description" class="form-item__label">Description</label>
             <textarea id="description"></textarea>
           </div>
-          <div>
+          <div class="form-submit">
              <label for="image" class="form-item__label">Upload image</label>
           <div class="image-upload">
            <button class="btn--accent" id="image-upload__btn">Press to add image url</button>
