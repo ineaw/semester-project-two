@@ -20,7 +20,7 @@ export function renderEdit() {
         <img class="edit__thumb" src="${products[i].image_url}"/>
         </figure>
         <h4 class="edit__title">${products[i].title}</h4>
-        <button class="btn-accent">Edit product</button>
+        <button class="btn--accent">Edit product</button>
         </a>
         </div>
         `;

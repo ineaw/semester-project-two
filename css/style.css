@@ -810,7 +810,7 @@ h2 {
   position: absolute;
 }
 
-.btn-accent {
+.btn--accent {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -838,11 +838,11 @@ h2 {
       touch-action: manipulation;
 }
 
-.btn-accent a {
+.btn--accent a {
   color: #000000;
 }
 
-.btn-accent:after {
+.btn--accent:after {
   background-color: #e84c18;
   content: "";
   display: block;
@@ -860,7 +860,7 @@ h2 {
   z-index: -1;
 }
 
-.btn-accent:hover:after {
+.btn--accent:hover:after {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
@@ -905,7 +905,7 @@ h2 {
           align-items: center;
   background-color: #fbddf0;
   font-size: 1rem;
-  border: 2px solid #e84c18;
+  border: #fbddf0;
   color: #e84c18;
   cursor: pointer;
 }
@@ -952,10 +952,7 @@ h2 {
   gap: 1rem;
 }
 
-#imageuploadBtn,
-.checkout,
-#clear-favs--btn,
-#clear-cart {
+.btn--primary {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -967,6 +964,13 @@ h2 {
   max-width: 350px;
   padding: 1em 1.5em;
   text-align: center;
+}
+
+.btn--primary {
+  background-color: #e84c18;
+  color: #ffffff;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
 }
 
 #logout {

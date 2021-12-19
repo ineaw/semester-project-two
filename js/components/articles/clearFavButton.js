@@ -1,5 +1,5 @@
 export default function clearFavButton() {
-  const clearBtn = document.querySelector("#clear-favs--btn");
+  const clearBtn = document.querySelector("#clear-favs");
   const clearFavs = document.querySelector(".fav-container");
 
   clearBtn.addEventListener("click", clearFavourites);

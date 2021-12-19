@@ -40,7 +40,7 @@ function submitForm(event) {
       }
     }
   );
-  document.getElementById("imageuploadBtn").addEventListener(
+  document.getElementById("image-upload__btn").addEventListener(
     "click",
     function () {
       myWidget.open();

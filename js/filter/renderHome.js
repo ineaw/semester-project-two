@@ -7,7 +7,6 @@ export function renderFeatured(item) {
   for (let i = 0; i < item.length; i++) {
     const feat = item[i].featured ? "block" : "none";
     // const featuredContainer = products.filter((product) => product.featured === true);
-    console.log(feat);
 
     featuredContainer.innerHTML += `
           <div class="featured" style="display: ${feat}">

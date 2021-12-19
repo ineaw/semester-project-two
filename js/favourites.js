@@ -8,7 +8,7 @@ createMenu();
 export const favourites = getExistingFavs();
 
 const favContainer = document.querySelector(".fav-container");
-const clearFavBtn = document.querySelector("#clear-favs--btn");
+const clearFavBtn = document.querySelector("#clear-favs");
 clearFavButton();
 
 favContainer.innerHTML = "";
