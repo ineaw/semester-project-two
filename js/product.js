@@ -4,7 +4,6 @@ import clearCartButton from "./components/articles/clearCartButton.js";
 import { addToCart } from "./filter/addToCart.js";
 import { getCartItems } from "./components/getCartItems.js";
 import { countItems, countSum } from "./components/countItems.js";
-import { renderFeatured } from "./filter/renderHome.js";
 
 createMenu();
 clearCartButton();

@@ -63,6 +63,11 @@
   background-color: $main;
 }
 
+.btn--accent:focus {
+  background-color: $main;
+  color: $light;
+}
+
 .btn--delete {
   align-items: center;
   background-color: $main;

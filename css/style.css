@@ -357,9 +357,6 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
   gap: 5rem;
 }
 
@@ -375,15 +372,24 @@ main {
 
 .detail__info {
   width: 85vw;
-  color: #42a76f;
+  color: #000000;
+}
+
+.detail__title {
+  text-align: left;
 }
 
 .detail__title, .detail__price, .detail__description {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail__description {
+  font-size: 1rem;
+  max-width: 400px;
 }
 
 .detail__price {
-  font-weight: 200;
+  font-weight: 600;
 }
 
 .newsletter {
@@ -452,14 +458,12 @@ main {
   }
   .detail__info {
     width: 30vw;
-    color: #42a76f;
   }
   .detail__title, .detail__price, .detail__description {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
   }
   .detail__description {
-    font-size: 0.8rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     max-width: 250px;
   }
 }
@@ -858,6 +862,11 @@ h2 {
 .btn__cta--main:active,
 .btn-accent:active {
   background-color: #e84c18;
+}
+
+.btn--accent:focus {
+  background-color: #e84c18;
+  color: #ffffff;
 }
 
 .btn--delete {

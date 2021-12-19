@@ -135,7 +135,6 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  align-items: left;
   gap: 5rem;
 
   &__image {
@@ -148,17 +147,26 @@
 
   &__info {
     width: 85vw;
-    color: $sub;
+    color: $text;
+  }
+
+  &__title {
+    text-align: left;
   }
 
   &__title,
   &__price,
   &__description {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: $fs-base;
+    max-width: 400px;
   }
 
   &__price {
-    font-weight: 200;
+    font-weight: 600;
   }
 }
 
@@ -225,18 +233,16 @@
 
     &__info {
       width: 30vw;
-      color: $sub;
     }
 
     &__title,
     &__price,
     &__description {
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.5rem;
     }
 
     &__description {
-      font-size: 0.8rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
       max-width: 250px;
     }
   }
