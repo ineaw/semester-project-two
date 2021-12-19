@@ -83,6 +83,7 @@ body > footer {
 
 .logo {
   width: 150px;
+  margin-left: 1rem;
 }
 
 .hero {
@@ -118,7 +119,7 @@ body > footer {
 
 .hero__image {
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   height: 60vh;
   position: relative;
@@ -263,7 +264,7 @@ body > footer {
 .favourite__info,
 .featured__info,
 .product__info {
-  font-size: "ivypresto-display", serif;
+  font-size: "lust didone", serif;
   padding-inline: 0.1em;
   font-family: "degular", sans-serif;
 }
@@ -483,6 +484,28 @@ body > footer {
 /* ======
 Header navigation
   ====== */
+.top__header {
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row;
+          flex: row;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.3em 1em 0.3em 0.3rem;
+  gap: 0.3rem;
+}
+
+#logout {
+  border: none;
+}
+
 .nav {
   padding: 1em;
   width: 100%;
@@ -603,14 +626,6 @@ Header navigation
           transform: scaleX(1);
 }
 
-.nav--open,
-.nav--close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #e84c18;
-}
-
 .navigation--open {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -623,7 +638,7 @@ Header navigation
 /* breadcrumbs */
 .breadcrumbs {
   font-family: "degular", sans-serif;
-  left: 0;
+  padding-left: 1rem;
 }
 
 .breadcrumbs li {
@@ -663,7 +678,7 @@ label {
 form {
   max-width: 600px;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 input,
@@ -728,6 +743,10 @@ form textarea {
           flex-direction: column;
 }
 
+.login {
+  margin-top: 1rem;
+}
+
 @media (min-width: 768px) {
   form {
     width: 400px;
@@ -761,14 +780,35 @@ a {
 
 h1 {
   color: #e84c18;
-  font-family: "ivypresto-display", serif;
+  font-family: "lust didone", serif;
   font-size: 3.75rem;
+  text-align: center;
 }
 
 h2 {
   color: #e84c18;
-  font-family: "ivypresto-display", serif;
+  font-family: "lust didone", serif;
   font-size: 2.875rem;
+}
+
+.nav--open,
+.nav--close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e84c18;
+}
+
+#close-cart {
+  font-size: 1.5rem;
+  padding: 2rem;
+  background: transparent;
+  color: #e84c18;
+  border: none;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  position: absolute;
 }
 
 .btn-accent {
@@ -814,10 +854,10 @@ h2 {
   top: -2px;
   -webkit-transform: translate(8px, 8px);
           transform: translate(8px, 8px);
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transition: -webkit-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 250ms ease-out;
+  transition: -webkit-transform 250ms ease-out;
+  transition: transform 250ms ease-out;
+  transition: transform 250ms ease-out, -webkit-transform 250ms ease-out;
   z-index: -1;
 }
 
@@ -874,6 +914,8 @@ h2 {
 .btn__cta--main:hover {
   background-color: #e84c18;
   color: #ffffff;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
 }
 
 .feat-cta {
@@ -882,10 +924,6 @@ h2 {
 
 .feat-cta:hover {
   border-bottom: #fbddf0 2px solid;
-}
-
-.fa-shopping-cart {
-  margin: 0 5px;
 }
 
 .filters {
@@ -915,17 +953,6 @@ h2 {
   gap: 1rem;
 }
 
-#close-button {
-  font-size: 2rem;
-  padding: 2rem;
-  background: transparent;
-  color: #000000;
-  border: none;
-  left: 0;
-  top: 0;
-  position: absolute;
-}
-
 #imageuploadBtn,
 .checkout,
 #clear-favs--btn,
@@ -941,6 +968,12 @@ h2 {
   max-width: 350px;
   padding: 1em 1.5em;
   text-align: center;
+}
+
+#logout {
+  background-color: #fbddf0;
+  padding: 0.2rem;
+  color: #e84c18;
 }
 
 @media (min-width: 768px) {
@@ -967,6 +1000,32 @@ h2 {
             flex-direction: row;
     gap: 1rem;
   }
+}
+
+.message {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid grey;
+  color: grey;
+}
+
+.message--error {
+  border-color: #feb133;
+  color: #ffffff;
+  background: #feb133;
+}
+
+.message--warning {
+  border-color: #feb133;
+  color: #ffffff;
+  background: #feb133;
+}
+
+.message--success {
+  border-color: #42a76f;
+  color: #ffffff;
+  background: #42a76f;
 }
 
 footer {
@@ -1063,13 +1122,8 @@ footer {
   scrollbar-width: none;
   width: 100vw;
   height: 100vh;
-  padding: 1rem 1rem 1rem 5rem;
-}
-
-.products-in-cart--btn {
-  font-size: 3rem;
-  padding: 0em 1em;
-  position: absolute;
+  padding: 1rem 1rem 5rem 1rem;
+  font-size: 1.5rem;
 }
 
 .products-in-cart::-webkit-scrollbar {
@@ -1118,9 +1172,9 @@ footer {
 }
 
 .products-in-cart__buy-item {
-  border-bottom: black 1px solid;
+  border-bottom: #e84c18 1px solid;
   width: 90%;
-  padding: 10px 0;
+  padding: 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1128,14 +1182,14 @@ footer {
 }
 
 .products-in-cart img {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .shopping-cart #sum-items,
-.shopping-cart .sum-prices {
+.shopping-cart #sum-prices {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1152,16 +1206,12 @@ footer {
 }
 
 #sum-prices {
-  padding-left: 0.5em;
+  font-size: 1.5rem;
 }
 
 #sum-items {
   font-size: 1rem;
-}
-
-#close-button {
-  cursor: pointer;
-  color: black;
+  padding-left: 0.2em;
 }
 
 .overlay {

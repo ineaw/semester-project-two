@@ -1,0 +1,25 @@
+.message {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid grey;
+  color: grey;
+}
+
+.message--error {
+  border-color: $warning;
+  color: $light;
+  background: $warning;
+}
+
+.message--warning {
+  border-color: $warning;
+  color: $light;
+  background: $warning;
+}
+
+.message--success {
+  border-color: $success;
+  color: $light;
+  background: $success;
+}

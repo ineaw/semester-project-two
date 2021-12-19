@@ -26,7 +26,7 @@ function submitForm(event) {
   const passwordValue = password.value.trim();
 
   if (usernameValue.length === 0 || passwordValue.length === 0) {
-    return displayMessage("warning", "Invalid login details", ".message-container");
+    return displayMessage("message--warning", "Invalid login details", ".message-container");
   }
 
   doLogin(usernameValue, passwordValue);
@@ -52,7 +52,7 @@ async function doLogin(username, password) {
     console.log(json);
 
     if (json.user) {
-      displayMessage("success", "Successfully logged in", ".message-container");
+      displayMessage("message--success", "Successfully logged in", ".message-container");
 
       saveToken(json.jwt);
       saveUser(json.user);
@@ -61,10 +61,10 @@ async function doLogin(username, password) {
     }
 
     if (json.error) {
-      displayMessage("warning", "Invalid login details", ".message-container");
+      displayMessage("message--warning", "Invalid login details", ".message-container");
     }
   } catch (error) {
     console.log(error);
-    displayMessage("error", "An error occured while trying to log in", ".message-container");
+    displayMessage("message--error", "An error occured while trying to log in", ".message-container");
   }
 }

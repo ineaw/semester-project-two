@@ -5,6 +5,7 @@ body > footer {
 
 .logo {
   width: 150px;
+  margin-left: 1rem;
 }
 
 .hero {
@@ -23,7 +24,7 @@ body > footer {
 
   &__image {
     background-size: cover;
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     height: 60vh;
     position: relative;

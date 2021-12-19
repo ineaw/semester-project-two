@@ -2,6 +2,21 @@
 Header navigation
   ====== */
 
+.top__header {
+  // height: 20px;
+  background: $light;
+  display: flex;
+  flex: row;
+  justify-content: right;
+  align-items: center;
+  padding: 0.3em 1em 0.3em 0.3rem;
+  gap: 0.3rem;
+}
+
+#logout {
+  border: none;
+}
+
 .nav {
   padding: 1em;
   width: 100%;
@@ -91,14 +106,6 @@ Header navigation
   transform: scaleX(1);
 }
 
-.nav--open,
-.nav--close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: $main;
-}
-
 .navigation--open {
   transform: translateX(100%);
 }
@@ -111,7 +118,7 @@ Header navigation
 
 .breadcrumbs {
   font-family: $ff-text;
-  left: 0;
+  padding-left: 1rem;
 }
 
 .breadcrumbs li {

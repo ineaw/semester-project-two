@@ -10,8 +10,6 @@ export default function deleteButton(id) {
   const button = document.querySelector(".btn--delete");
 
   button.onclick = async function () {
-    console.log(id);
-
     const doDelete = confirm("Are you sure you want to delete this item?");
 
     if (doDelete) {
@@ -29,19 +27,19 @@ export default function deleteButton(id) {
       try {
         const response = await fetch(url, options);
         const json = await response.json();
-        if (json.created_at) {
-          displayMessage("success", "item deleted", ".message-container");
+        if (json.createdAt) {
+          displayMessage("message--success", "item deleted", ".message-container");
           location.href = "/";
         }
 
         if (json.error) {
-          displayMessage("error", "You have to be logged in to perform this action", ".message-container");
+          displayMessage("message--error", "You have to be logged in to perform this action", ".message-container");
         }
 
         console.log(json);
       } catch (error) {
         console.log(error);
-        displayMessage("error", "An error occured", ".message-container");
+        displayMessage("message--error", "An error occured", ".message-container");
       }
     }
   };

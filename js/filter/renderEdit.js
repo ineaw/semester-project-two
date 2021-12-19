@@ -14,7 +14,7 @@ export function renderEdit() {
 
       for (let i = 0; i < products.length; i++) {
         productContainer.innerHTML += `
-        <div id="edit" class="edit flex-card">
+        <div class="edit flex-card">
         <a href="edit.html?id=${products[i].id}">
         <figure class="edit__figure">
         <img class="edit__thumb" src="${products[i].image_url}"/>

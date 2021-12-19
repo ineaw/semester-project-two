@@ -83,7 +83,7 @@ function submitForm(event) {
   );
 
   if (titleValue.length === 0 || priceValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0) {
-    return displayMessage("warning", "please supply proper login values", ".message-container");
+    return displayMessage("message--warning", "please supply proper login values", ".message-container");
   }
 
   updateProduct(titleValue, priceValue, descriptionValue, imageValue, idValue);
@@ -109,16 +109,16 @@ async function updateProduct(title, price, description, image, id) {
     const response = await fetch(url, options);
     const json = await response.json();
 
-    if (json.created_at) {
-      displayMessage("success", "item updated", ".message-container");
+    if (json.createdAt) {
+      displayMessage("message--success", "item updated", ".message-container");
       form.reset();
     }
 
     if (json.error) {
-      displayMessage("error", "You have to be logged in to perform this action", ".message-container");
+      displayMessage("message--error", "You have to be logged in to perform this action", ".message-container");
     }
   } catch (error) {
     console.log(error);
-    displayMessage("error", "An error occured", ".message-container");
+    displayMessage("message--error", "An error occured", ".message-container");
   }
 }

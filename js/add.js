@@ -26,15 +26,15 @@ function submitForm(event) {
   const descriptionValue = description.value.trim();
   const imageValue = image.value.trim();
 
-  const cloudName = "iwa"; // replace with your own cloud name
-  const uploadPreset = "bspotaqh"; // replace with your own upload preset
+  const cloudName = "iwa";
+  const uploadPreset = "bspotaqh";
   const myWidget = cloudinary.createUploadWidget(
     {
       cloudName: cloudName,
       uploadPreset: uploadPreset,
     },
     (error, result) => {
-      if (!error && result && result.event === "success") {
+      if (!error && result && result.event === "message--success") {
         console.log("Done! Here is the image info: ", result.info);
         image.value = `${result.info.url}`;
       }
@@ -49,7 +49,7 @@ function submitForm(event) {
   );
 
   if (titleValue.length === 0 || priceValue.length === 0 || descriptionValue.length === 0 || imageValue.length === 0) {
-    return displayMessage("warning", "please supply proper values", ".message-container");
+    return displayMessage("message--warning", "please supply proper values", ".message-container");
   }
 
   addProduct(titleValue, priceValue, descriptionValue, imageValue);
@@ -74,16 +74,18 @@ async function addProduct(title, price, description, image) {
     const response = await fetch(url, options);
     const json = await response.json();
 
-    if (json.created_at) {
-      displayMessage("success", "Product created", ".message-container");
+    console.log(json);
+
+    if (json.createdAt) {
+      displayMessage("message--success", "Product created", ".message-container");
       form.reset();
     }
 
     if (json.error) {
-      displayMessage("error", "You have to be logged in to perform this action", ".message-container");
+      displayMessage("message--error", "You have to be logged in to perform this action", ".message-container");
     }
   } catch (error) {
     console.log(error);
-    displayMessage("error", "An error occured", ".message-container");
+    displayMessage("message--error", "An error occured", ".message-container");
   }
 }

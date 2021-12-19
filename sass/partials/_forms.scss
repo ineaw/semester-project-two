@@ -7,7 +7,7 @@ label {
 form {
   max-width: 600px;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 input,
@@ -59,6 +59,10 @@ form textarea {
 .sign-up {
   display: flex;
   flex-direction: column;
+}
+
+.login {
+  margin-top: 1rem;
 }
 
 @media (min-width: 768px) {

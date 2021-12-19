@@ -7,6 +7,25 @@
 //   border: $borderWidth solid $color;
 //   transition: padding 0.3s ease-in-out;
 // }
+.nav--open,
+.nav--close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $main;
+}
+
+#close-cart {
+  font-size: 1.5rem;
+  padding: 2rem;
+  background: transparent;
+  color: $main;
+  border: none;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
 
 .btn-accent {
   align-items: center;
@@ -41,7 +60,7 @@
   position: absolute;
   top: -2px;
   transform: translate(8px, 8px);
-  transition: transform 0.2s ease-out;
+  transition: transform 250ms ease-out;
   z-index: -1;
 }
 
@@ -87,6 +106,7 @@
 .btn__cta--main:hover {
   background-color: $main;
   color: $light;
+  transition: 250ms ease-in-out;
 }
 
 .feat-cta {
@@ -95,10 +115,6 @@
 
 .feat-cta:hover {
   border-bottom: $accent 2px solid;
-}
-
-.fa-shopping-cart {
-  margin: 0 5px;
 }
 
 .filters {
@@ -116,17 +132,6 @@
   gap: 1rem;
 }
 
-#close-button {
-  font-size: 2rem;
-  padding: 2rem;
-  background: transparent;
-  color: $text;
-  border: none;
-  left: 0;
-  top: 0;
-  position: absolute;
-}
-
 #imageuploadBtn,
 .checkout,
 #clear-favs--btn,
@@ -140,6 +145,12 @@
   max-width: 350px;
   padding: 1em 1.5em;
   text-align: center;
+}
+
+#logout {
+  background-color: $accent;
+  padding: 0.2rem;
+  color: $main;
 }
 
 @media (min-width: 768px) {
