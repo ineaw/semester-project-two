@@ -20,18 +20,19 @@ export function renderProducts(products) {
   products.forEach((product) => {
     let favIcon = toggle(product);
 
-    productContainer.innerHTML += `<div class="product flex-card">
-                                    <figure class="product__figure">
-                                    <i class="${favIcon} fa-heart" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image_url}"></i>
-                                    <a href="product.html?id=${product.id}">
-                                    <img class="product__image" src="${product.image_url}" alt="${product.title}">
-                                    </a>
-                                    </figure>
-                                    <div class="product__info">
-                                    <h3 class="product__title">${product.title}</h3>
-                                    <h4 class="product__price">kr <span class="price-value">${product.price}</span></h6>
-                                    </div>
-                                  </div>`;
+    productContainer.innerHTML += `
+        <div class="product flex-card">
+        <figure class="product__figure">
+        <i class="${favIcon} fa-heart" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image_url}"></i>
+        <a href="product.html?id=${product.id}">
+        <img class="product__image" src="${product.image_url}" alt="${product.title}">
+        </a>
+        </figure>
+        <div class="product__info">
+        <h3 class="product__title">${product.title}</h3>
+        <h4 class="product__price">kr <span class="price-value">${product.price}</span></h6>
+        </div>
+        </div>`;
   });
   toggleFavs();
 

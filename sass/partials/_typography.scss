@@ -8,12 +8,6 @@ a {
   color: $main;
 }
 
-// .section {
-//   &__header {
-//     font-weight: 400;
-//   }
-// }
-
 .detail {
   &__title {
     font-size: $fs-h3;
@@ -32,4 +26,5 @@ h2 {
   color: $main;
   font-family: $ff-base;
   font-size: $fs-h2;
+  text-align: center;
 }

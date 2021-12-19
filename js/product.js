@@ -1,4 +1,3 @@
-// import { renderProducts } from "./filter/renderProducts.js";
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./components/createMenu.js";
 import clearCartButton from "./components/articles/clearCartButton.js";
@@ -48,12 +47,12 @@ detailContainer.innerHTML = "";
         <p class="detail__description">${item.description}</p>
         </div>
         </div>
-      `;
+       `;
 
     breadcrumbs.innerHTML += `   
-      <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a>${item.title}</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a>${item.title}</a></li>
       `;
 
     let productsInCart = getCartItems();
@@ -77,11 +76,6 @@ detailContainer.innerHTML = "";
           </a>
           <div>
           <h5>${product.title}</h5>
-          <div>
-          <button class="cart__minus" data-product-id="${product.id}">-</button>
-          <span class="cart__count">${product.count}</span>
-          <button class="cart__plus" data-product-id="${product.id}">+</button>
-          </div>
           <h6><span class="cart__count">${product.count} x </span>${product.price}</h6>
           <div>
           </div>
@@ -94,7 +88,7 @@ detailContainer.innerHTML = "";
         cartNumbers.innerHTML = countTheItems();
       } else {
         document.querySelector(".checkout").classList.add("hidden");
-        cartContent.innerHTML = '<h4 class="cart__text--empty">Your cart is empty, <span><a href="products.html">fill up now</a></span></h4>';
+        cartContent.innerHTML = `<h4 class="cart__text--empty">Your cart is empty, <span><a href="products.html">fill up now</a></span></h4>`;
         cartSumPrice.innerHTML = "";
         cartNumbers.innerHTML = "";
       }

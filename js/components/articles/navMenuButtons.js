@@ -3,19 +3,13 @@ export function navMenuButtons() {
   const openBtn = document.querySelector(".nav--open");
   const nav = document.querySelector(".nav__content");
 
-  /* Open Navigation */
-
   openBtn.addEventListener("click", () => {
     nav.classList.add("navigation--open");
   });
 
-  /* Close Navigation */
-
   closeBtn.addEventListener("click", () => {
     nav.classList.remove("navigation--open");
   });
-
-  /* close cart */
 
   function closeCart() {
     const cart = document.querySelector(".cart");

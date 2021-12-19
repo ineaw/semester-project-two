@@ -5,7 +5,7 @@ import { searchProducts } from "./filter/searchProducts.js";
 import sortProducts from "./components/sortProducts.js";
 import { getCartItems } from "./components/getCartItems.js";
 import { countItems, countSum } from "./components/countItems.js";
-import { updateCart } from "./updateCart.js";
+import { updateCart } from "./filter/updateCart.js";
 
 createMenu();
 
@@ -24,7 +24,6 @@ const productsUrl = `${baseUrl}products`;
     let productsInCart = getCartItems();
     const cartContent = document.querySelector("#cart__items");
     const cartSumPrice = document.querySelector("#sum-prices");
-    // const prod = document.querySelectorAll(".detail");
     const cartNumbers = document.querySelector("#sum-items");
 
     const countTheSumPrice = countSum(productsInCart);

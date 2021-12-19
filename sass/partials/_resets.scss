@@ -1,6 +1,3 @@
-/*---- Reset ----*/
-
-/* Box sizing */
 *,
 *::before,
 *::after {
@@ -10,20 +7,6 @@
   outline: none;
   text-decoration: none;
 }
-
-// body {
-//   @include font-base;
-//   line-height: 1.6;
-
-// display: grid;
-// grid-template:
-//   "header header header header" 10em
-//   "hero hero hero hero" 50vh
-//   ". main sidebar ." auto
-//   "footer footer footer footer" 10em
-//   / 1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;
-// grid-column-gap: 1.5em;
-// }
 
 html,
 body {
@@ -62,8 +45,6 @@ select {
   }
 }
 
-/*---- Utility classes ----*/
-
 .flex {
   display: flex;
   margin-inline: auto;
@@ -73,12 +54,6 @@ select {
   display: grid;
   margin-inline: auto;
 }
-
-// .container {
-//   padding-inline: 2em;
-//   max-width: 80rem;
-//   margin-inline: auto;
-// }
 
 .sr-only {
   position: absolute;

@@ -60,8 +60,8 @@ function submitForm(event) {
   const imageValue = image.value.trim();
   const idValue = idInput.value;
 
-  const cloudName = "iwa"; // replace with your own cloud name
-  const uploadPreset = "bspotaqh"; // replace with your own upload preset
+  const cloudName = "iwa";
+  const uploadPreset = "bspotaqh";
   const myWidget = cloudinary.createUploadWidget(
     {
       cloudName: cloudName,

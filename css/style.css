@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/*---- Reset ----*/
-/* Box sizing */
 *,
 *::before,
 *::after {
@@ -49,7 +47,6 @@ select {
   }
 }
 
-/*---- Utility classes ----*/
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -79,6 +76,10 @@ body > footer {
   position: -webkit-sticky;
   position: sticky;
   top: 100vh;
+}
+
+main {
+  padding: 0 1rem 2rem 1rem;
 }
 
 .logo {
@@ -130,6 +131,7 @@ body > footer {
   z-index: 1;
   max-width: 90vw;
   line-height: 1.1;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -164,10 +166,6 @@ body > footer {
   }
 }
 
-/* ======
-  Layout
-  ====== */
-/* Containers */
 .grid {
   text-align: center;
   place-items: center;
@@ -480,9 +478,6 @@ body > footer {
   }
 }
 
-/* ======
-Header navigation
-  ====== */
 .top__header {
   background: #ffffff;
   display: -webkit-box;
@@ -634,7 +629,6 @@ Header navigation
   margin: 0;
 }
 
-/* breadcrumbs */
 .breadcrumbs {
   font-family: "degular", sans-serif;
   padding-left: 1rem;
@@ -721,7 +715,7 @@ form textarea {
   border: 2px solid #333;
 }
 
-.image-uploadBtn {
+.image-upload__btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -788,6 +782,7 @@ h2 {
   color: #e84c18;
   font-family: "lust didone", serif;
   font-size: 2.875rem;
+  text-align: center;
 }
 
 .nav--open,
@@ -1033,6 +1028,51 @@ h2 {
   border-color: #42a76f;
   color: #ffffff;
   background: #42a76f;
+}
+
+.loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin: 0 40vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.loader::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 8px solid #e84c18;
+  border-color: #e84c18 transparent #e84c18 transparent;
+  -webkit-animation: loader 0.8s linear infinite;
+          animation: loader 0.8s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 footer {

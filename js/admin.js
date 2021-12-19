@@ -1,8 +1,3 @@
-// import displayMessage from "./components/displayMessage.js";
-// import { saveToken, saveUser } from "./utils/storage.js";
-// import { baseUrl } from "./settings/api.js";
-// import createMenu from "./components/createMenu.js";
-
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./components/createMenu.js";
 import displayMessage from "./components/displayMessages.js";

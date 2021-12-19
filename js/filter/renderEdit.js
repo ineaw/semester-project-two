@@ -1,4 +1,3 @@
-// import { getExistingFavs } from "../components/favFunctions.js";
 import { baseUrl } from "../settings/api.js";
 
 const productsUrl = baseUrl + "products";
@@ -14,15 +13,15 @@ export function renderEdit() {
 
       for (let i = 0; i < products.length; i++) {
         productContainer.innerHTML += `
-        <div class="edit flex-card">
-        <a href="edit.html?id=${products[i].id}">
-        <figure class="edit__figure">
-        <img class="edit__thumb" src="${products[i].image_url}"/>
-        </figure>
-        <h4 class="edit__title">${products[i].title}</h4>
-        <button class="btn--accent">Edit product</button>
-        </a>
-        </div>
+            <div class="edit flex-card">
+            <a href="edit.html?id=${products[i].id}">
+            <figure class="edit__figure">
+            <img class="edit__thumb" src="${products[i].image_url}"/>
+            </figure>
+            <h4 class="edit__title">${products[i].title}</h4>
+            <button class="btn--accent">Edit product</button>
+            </a>
+            </div>
         `;
       }
     } catch (error) {

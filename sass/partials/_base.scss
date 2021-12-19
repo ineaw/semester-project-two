@@ -3,6 +3,10 @@ body > footer {
   top: 100vh;
 }
 
+main {
+  padding: 0 1rem 2rem 1rem;
+}
+
 .logo {
   width: 150px;
 }
@@ -35,6 +39,7 @@ body > footer {
     z-index: 1;
     max-width: 90vw;
     line-height: 1.1;
+    text-align: left;
   }
 }
 

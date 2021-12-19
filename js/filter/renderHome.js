@@ -2,11 +2,8 @@ export function renderFeatured(item) {
   const featuredContainer = document.querySelector(".featured-products");
   featuredContainer.innerHTML = "";
 
-  // Using a Ternary operator to see if the products are featured
-
   for (let i = 0; i < item.length; i++) {
     const feat = item[i].featured ? "block" : "none";
-    // const featuredContainer = products.filter((product) => product.featured === true);
 
     featuredContainer.innerHTML += `
           <div class="featured" style="display: ${feat}">

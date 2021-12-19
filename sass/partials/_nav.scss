@@ -1,9 +1,4 @@
-/* ======
-Header navigation
-  ====== */
-
 .top__header {
-  // height: 20px;
   background: $light;
   display: flex;
   flex: row;
@@ -113,8 +108,6 @@ Header navigation
 .fa-shopping-cart {
   margin: 0;
 }
-
-/* breadcrumbs */
 
 .breadcrumbs {
   font-family: $ff-text;

@@ -22,7 +22,7 @@ export function updateCart(productsInCart, cartContent, cartSumPrice, countTheSu
       cartNumbers.innerHTML = countTheItems();
     } else {
       document.querySelector(".checkout").classList.add("hidden");
-      cartContent.innerHTML = '<h4 class="cart__text--empty">Your cart is empty, <span><a href="products.html">fill up now</a></span></h4>';
+      cartContent.innerHTML = `<h4 class="cart__text--empty">Your cart is empty, <span><a href="products.html">fill up now</a></span></h4>`;
       cartSumPrice.innerHTML = "";
       cartNumbers.innerHTML = "";
     }
