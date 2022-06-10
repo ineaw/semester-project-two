@@ -1,25 +1,27 @@
-# Your project title
+# Semester Project 2
 
 ![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
 
-A simple overview of the use/purpose of the project.
+Create an e-commerce website that has both customer-facing and admin sections. 
+Both sections should be responsive and the website will be populated by a Strapi API supplied by Noroff.
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
 
-You can add some bullet points if you'd like to:
+- Build a frontend with home, product list, product detail and cart pages.
 
-- List item 1
-- List item 2
-- List item 3
+- Build admin pages to create, update and delete products.
+
+- The website must be responsive on all devices.
+
+- Building a checkout and payment system is not a part of the project.
+
 
 ## Built With
 
-You can list a the tech stack that you've used over here
 
-- [React.js](https://reactjs.org/)
-- [Bootstrap](https://getbootstrap.com)
+- [Javascript]
+- [Sass](https://sass-lang.com/)
 
 ## Getting Started
 
@@ -30,7 +32,7 @@ This is where you list how to get the project started. It typically just include
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+https://github.com/ineaw/semester-project-two.git
 ```
 
 2. Install the dependencies:
@@ -41,13 +43,17 @@ npm install
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
 
 To run the app, run the following commands:
 
 ```bash
 npm run start
 ```
+
+User credentials<br/>
+email: admin@admin.com<br/>
+username: admin<br/>
+password: Pass1234
 
 ## Contributing
 
