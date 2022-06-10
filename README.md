@@ -20,7 +20,7 @@ Both sections should be responsive and the website will be populated by a Strapi
 ## Built With
 
 
-- [Javascript]
+- Javascript
 - [Sass](https://sass-lang.com/)
 
 ## Getting Started
