@@ -1,6 +1,7 @@
 # Semester Project 2
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![image](https://user-images.githubusercontent.com/70141648/173183761-a8e3f93c-cd17-4b71-aae7-8065618a165b.png)
+
 
 Create an e-commerce website that has both customer-facing and admin sections. 
 Both sections should be responsive and the website will be populated by a Strapi API supplied by Noroff.
